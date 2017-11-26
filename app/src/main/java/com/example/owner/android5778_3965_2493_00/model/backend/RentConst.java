@@ -165,6 +165,7 @@ public class RentConst {
     public static Order ContentValuesToOrder(ContentValues contentValues) {
         Order order = new Order();
         order.setCustomerID(contentValues.getAsInteger(OrderConst.CUSTUMERID));
+        //order.setOrderStatus(contentValues.get(OrderConst.ORDER));
         order.setCarNumber(contentValues.getAsString(OrderConst.CARNUMBER));
         //order.setStartRent(contentValues.get(OrderConst.STARTRENT));
         //order.setEndRent(contentValues.get(OrderConst.ENDRENT));
