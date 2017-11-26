@@ -173,7 +173,8 @@ public class RentConst {
         order.setFuelFilling(contentValues.getAsBoolean(OrderConst.FUELFILLING));
         order.setFuelLitter(contentValues.getAsFloat(OrderConst.FUELLITTER));
         order.setCharge(contentValues.getAsFloat(OrderConst.CHARGE));
-        order.setOrderID(contentValues.getAsInteger(OrderConst.ORDERID));
+        //order.setOrderID(contentValues.getAsInteger(OrderConst.ORDERID));
+        //i add change
         return order;
     }
 }
