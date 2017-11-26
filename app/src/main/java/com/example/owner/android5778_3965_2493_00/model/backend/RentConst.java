@@ -175,7 +175,6 @@ public class RentConst {
         order.setFuelLitter(contentValues.getAsFloat(OrderConst.FUELLITTER));
         order.setCharge(contentValues.getAsFloat(OrderConst.CHARGE));
         //order.setOrderID(contentValues.getAsInteger(OrderConst.ORDERID));
-        //i add change
         return order;
     }
 }
