@@ -14,20 +14,20 @@ import java.util.List;
  */
 
 public interface DB_manager {
-    void addCustomer(ContentValues newCustomer);
-    void addCarModel(ContentValues newCarModel);
-    void addCar(ContentValues newCar);
-    void addBranch(ContentValues newBranch);
+    boolean addCustomer(ContentValues newCustomer);
+    boolean addCarModel(ContentValues newCarModel);
+    boolean addCar(ContentValues newCar);
+    boolean addBranch(ContentValues newBranch);
 
-    void removeCustomer(ContentValues customer);
-    void removeCarModel(ContentValues carModel);
-    void removeCar(ContentValues car);
-    void removeBranch(ContentValues branch);
+    boolean removeCustomer(long id);
+    boolean removeCarModel(String id);
+    boolean removeCar(String id);
+    boolean removeBranch(long id);
 
-    void updateCustomer(ContentValues customer);
-    void updateCarModel(ContentValues carModel);
-    void updateCar(ContentValues car);
-    void updateBranch(ContentValues branch);
+    boolean updateCustomer(int id,ContentValues values);
+    boolean updateCarModel(String id,ContentValues values);
+    boolean updateCar(String id,ContentValues values);
+    boolean updateBranch(int id,ContentValues values);
 
     boolean existCustomer(ContentValues customer);
     boolean existcarModel(ContentValues carModel);
