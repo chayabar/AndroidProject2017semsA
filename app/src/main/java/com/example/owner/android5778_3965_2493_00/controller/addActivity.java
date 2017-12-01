@@ -45,7 +45,7 @@ public class addActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if ( v == AddButton ) {
-            
+            //addBranch
             // Handle clicks for AddButton
         }
     }
