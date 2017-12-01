@@ -1,12 +1,14 @@
 package com.example.owner.android5778_3965_2493_00.controller;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.owner.android5778_3965_2493_00.R;
+import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
 
 public class addActivity extends Activity implements View.OnClickListener {
 
@@ -45,9 +47,20 @@ public class addActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if ( v == AddButton ) {
-            //addBranch
+            addBranch();
             // Handle clicks for AddButton
         }
     }
 
-}
+    private void addBranch() {
+        final ContentValues contentValues = new ContentValues();
+        try {
+            int branchNumber = Integer.valueOf(this.BranchNumberEditText.getText().toString());
+            contentValues.put(RentConst.BranchConst.BRANCHNUMBER, branchNumber);
+            contentValues.put(RentConst.BranchConst.PARKINGSPACES, this.parkingSpacesEditText.getText().toString());
+            contentValues.put(RentConst.BranchConst.ADDRESS, this.AddressEditText.getText().toString());
+            //DBManagerFactory.getManager().addBranch(contentValues);
+        }
+        catch (Exception e) {}
+    }
+    }
