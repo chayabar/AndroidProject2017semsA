@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
-
+//chaya branch
 public class addBranchActivity extends Activity implements View.OnClickListener {
 
     private EditText AddressEditText;
