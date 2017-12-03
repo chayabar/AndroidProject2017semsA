@@ -25,8 +25,8 @@
         <activity android:name=".controller.OrderActivity" />
         <activity android:name=".controller.addOrderActivity" />
         <activity android:name=".controller.addCarActivity" />
-        <activity android:name=".controller.addCarModelActivity" />
-        <activity android:name=".controller.addCustomerActivity"></activity>
+        <activity android:name=".controller.addCustomerActivity" />
+        <activity android:name=".controller.addCarModelActivity"></activity>
     </application>
 
 </manifest>
