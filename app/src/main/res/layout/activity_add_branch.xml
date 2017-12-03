@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.owner.android5778_3965_2493_00.controller.addActivity"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:context="com.example.owner.android5778_3965_2493_00.controller.addBranchActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
 
     <EditText
         android:id="@+id/AddressEditText"
@@ -16,9 +16,9 @@
         android:hint="Address"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/parkingSpacesEditText"
-        app:layout_constraintTop_toBottomOf="@+id/BranchNumberEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/BranchNumberEditText" />
 
     <EditText
         android:id="@+id/parkingSpacesEditText"
@@ -28,9 +28,9 @@
         android:hint="Number of parking spaces"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/AddButton"
-        app:layout_constraintTop_toBottomOf="@+id/AddressEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/AddressEditText" />
 
     <Button
         android:id="@+id/AddButton"
@@ -38,9 +38,9 @@
         android:layout_height="wrap_content"
         android:text="add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkingSpacesEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/parkingSpacesEditText" />
 
     <EditText
         android:id="@+id/BranchNumberEditText"
@@ -50,8 +50,8 @@
         android:hint="Branch number"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/AddressEditText"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

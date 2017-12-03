@@ -18,7 +18,15 @@
         </activity>
         <activity android:name=".controller.MenuActivity" />
         <activity android:name=".controller.BranchActivity" />
-        <activity android:name=".controller.addActivity"></activity>
+        <activity android:name=".controller.addBranchActivity" />
+        <activity android:name=".controller.CarActivity" />
+        <activity android:name=".controller.CarModelActivity" />
+        <activity android:name=".controller.CustomerActivity" />
+        <activity android:name=".controller.OrderActivity" />
+        <activity android:name=".controller.addOrderActivity" />
+        <activity android:name=".controller.addCarActivity" />
+        <activity android:name=".controller.addCarModelActivity" />
+        <activity android:name=".controller.addCustomerActivity"></activity>
     </application>
 
 </manifest>

@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.example.owner.android5778_3965_2493_00.R;
 
-public class BranchActivity extends Activity implements View.OnClickListener {
+public class OrderActivity extends Activity implements View.OnClickListener {
 
     private Button AddButton;
     private Button UpdateButton;
@@ -17,7 +17,7 @@ public class BranchActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_branch);
+        setContentView(R.layout.activity_order);
         findViews();
     }
 
@@ -47,7 +47,7 @@ public class BranchActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         if ( v == AddButton ) {
             // Handle clicks for AddButton
-            Intent intent = new Intent(this, addBranchActivity.class);
+            Intent intent = new Intent(this, addOrderActivity.class);
             startActivity(intent);
         } else if ( v == UpdateButton ) {
             // Handle clicks for UpdateButton
@@ -55,5 +55,4 @@ public class BranchActivity extends Activity implements View.OnClickListener {
             // Handle clicks for deleteButton
         }
     }
-
 }

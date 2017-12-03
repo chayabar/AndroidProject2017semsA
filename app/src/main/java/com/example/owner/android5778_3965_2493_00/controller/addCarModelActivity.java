@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.owner.android5778_3965_2493_00.R;
-
+//hjj
 public class addCarModelActivity extends Activity implements View.OnClickListener {
 
     private Button AddButton;

@@ -10,18 +10,19 @@ import android.widget.EditText;
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
 
-public class addActivity extends Activity implements View.OnClickListener {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
-    }
+public class addBranchActivity extends Activity implements View.OnClickListener {
 
     private EditText AddressEditText;
     private EditText parkingSpacesEditText;
     private Button AddButton;
     private EditText BranchNumberEditText;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_branch);
+        findViews();
+    }
 
     /**
      * Find the Views in the layout<br />

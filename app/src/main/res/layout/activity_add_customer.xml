@@ -96,7 +96,7 @@
         android:ems="10"
         android:hint="credit card number"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/AddButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/eMailEditText"
         app:layout_constraintRight_toRightOf="@+id/eMailEditText"
@@ -105,11 +105,11 @@
         tools:layout_constraintRight_creator="1" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/AddButton"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_marginBottom="26dp"
-        android:text="Button"
+        android:text="add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/CreditEditText"

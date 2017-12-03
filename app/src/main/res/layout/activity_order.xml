@@ -10,17 +10,16 @@
         android:id="@+id/AddButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add branch"
+        android:text="add order"
         app:layout_constraintBottom_toTopOf="@+id/UpdateButton"
         app:layout_constraintLeft_toLeftOf="@+id/UpdateButton"
-        app:layout_constraintRight_toRightOf="@+id/UpdateButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/UpdateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="update branch"
+        android:text="update order"
         app:layout_constraintBottom_toTopOf="@+id/deleteButton"
         app:layout_constraintLeft_toLeftOf="@+id/deleteButton"
         app:layout_constraintRight_toRightOf="@+id/deleteButton"
@@ -30,7 +29,7 @@
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="delete branch"
+        android:text="delete order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
