@@ -12,6 +12,7 @@ import com.example.owner.android5778_3965_2493_00.R;
 public class addCarModelActivity extends Activity implements View.OnClickListener {
 
     private Button AddButton;
+    private EditText ModelCodeEditText;
     private EditText CompanyNameEditText;
     private EditText ModelNameEditText;
     private EditText EngineCapacityEditText;
