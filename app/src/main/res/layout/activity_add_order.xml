@@ -8,80 +8,156 @@
 
     <EditText
         android:id="@+id/OrderIdEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Order id"
         android:inputType="number"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="1dp" />
+        app:layout_constraintBottom_toTopOf="@+id/CustomerIdEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
+        android:id="@+id/CarNumberEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Car number"
         android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="116dp" />
+        app:layout_constraintBottom_toTopOf="@+id/StartRentEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OrderStatusSpinner"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
+        android:id="@+id/StartRentEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Start rent"
         android:inputType="date"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="193dp" />
+        app:layout_constraintBottom_toTopOf="@+id/EndRentEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CarNumberEditText"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
+        android:id="@+id/EndRentEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="End rent"
         android:inputType="date"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="261dp" />
+        app:layout_constraintBottom_toTopOf="@+id/StartMileAgeEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StartRentEditText"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <EditText
-        android:id="@+id/editText6"
-        android:layout_width="wrap_content"
+        android:id="@+id/StartMileAgeEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Start Mile Age"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="336dp" />
+        app:layout_constraintBottom_toTopOf="@+id/EndMileAgeEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EndRentEditText"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <EditText
-        android:id="@+id/editText7"
-        android:layout_width="wrap_content"
+        android:id="@+id/EndMileAgeEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="End Mile Age"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="393dp" />
+        app:layout_constraintBottom_toTopOf="@+id/FuelFillingCheckBox"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StartMileAgeEditText"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
+        android:id="@+id/FuelFillingCheckBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="445dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteY="445dp"
-        tools:layout_editor_absoluteX="145dp" />
+        android:text="Fuel Filling"
+        app:layout_constraintBottom_toTopOf="@+id/FuelLitterEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EndMileAgeEditText"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="195dp"
+        android:id="@+id/OrderStatusSpinner"
+        android:layout_width="0dp"
         android:layout_height="35dp"
-        tools:layout_editor_absoluteY="72dp"
-        tools:layout_editor_absoluteX="25dp" />
+        app:layout_constraintBottom_toTopOf="@+id/CarNumberEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CustomerIdEditText"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <EditText
+        android:id="@+id/FuelLitterEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Number of liters filled"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FuelFillingCheckBox"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Total payment"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FuelLitterEditText"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <EditText
+        android:id="@+id/CustomerIdEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="customer ID"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/OrderStatusSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OrderIdEditText"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <ScrollView
+        android:id="@+id/scrollView7"
+        android:layout_width="9dp"
+        android:layout_height="496dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintLeft_toRightOf="@+id/OrderIdEditText"
+        app:layout_constraintRight_toLeftOf="@+id/OrderIdEditText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>
