@@ -8,6 +8,7 @@ import com.example.owner.android5778_3965_2493_00.model.entities.Branch;
 import com.example.owner.android5778_3965_2493_00.model.entities.Car;
 import com.example.owner.android5778_3965_2493_00.model.entities.CarModel;
 import com.example.owner.android5778_3965_2493_00.model.entities.Customer;
+import com.example.owner.android5778_3965_2493_00.model.entities.Order;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ import static com.example.owner.android5778_3965_2493_00.model.backend.RentConst
 import static com.example.owner.android5778_3965_2493_00.model.backend.RentConst.ContentValuesToCar;
 import static com.example.owner.android5778_3965_2493_00.model.backend.RentConst.ContentValuesToCarModel;
 import static com.example.owner.android5778_3965_2493_00.model.backend.RentConst.ContentValuesToCustomer;
+import static com.example.owner.android5778_3965_2493_00.model.backend.RentConst.ContentValuesToOrder;
 
 /**
  * Created by owner on 26/11/2017.
@@ -75,6 +77,15 @@ public class List_DBManager implements DB_manager {
     }
 
     @Override
+    public boolean existorder(ContentValues neworder) {
+        Order order = ContentValuesToOrder(neworder);
+//        for (Order item : orders)
+//            if (item.getOrderID() == order.getOrderID()) {
+//                return true;
+//            }
+        return false;    }
+
+    @Override
     public boolean addCustomer(ContentValues newCustomer) {
         Customer customer = ContentValuesToCustomer(newCustomer);
         customers.add(customer);
@@ -100,6 +111,11 @@ public class List_DBManager implements DB_manager {
         Branch branch = ContentValuesToBranch(newBranch);
         branchs.add(branch);
         return true;
+    }
+
+    @Override
+    public boolean addOrder(ContentValues newOrder) {
+        return false;
     }
 
     @Override
@@ -147,6 +163,11 @@ public class List_DBManager implements DB_manager {
             }
         return branchs.remove(branchToRemove);
 
+    }
+
+    @Override
+    public boolean removeOrder(long id) {
+        return false;
     }
 
     @Override
@@ -198,6 +219,11 @@ public class List_DBManager implements DB_manager {
     }
 
     @Override
+    public boolean updateOrder(int id, ContentValues values) {
+        return false;
+    }
+
+    @Override
     public List<Customer> getCustomers() {
         return customers;
     }
@@ -215,5 +241,10 @@ public class List_DBManager implements DB_manager {
     @Override
     public List<Branch> getBranchs() {
         return branchs;
+    }
+
+    @Override
+    public List<Order> getOrders() {
+        return null;
     }
 }
