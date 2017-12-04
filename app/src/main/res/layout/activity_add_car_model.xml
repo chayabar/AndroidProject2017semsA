@@ -10,111 +10,120 @@
 
     <Button
         android:id="@+id/AddButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/YearsManufactureEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/YearsManufactureEditText"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <EditText
         android:id="@+id/ModelCodeEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="model code"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/ModelNameEditText"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 
     <EditText
         android:id="@+id/CompanyNameEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="company name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/EngineCapacityEditText"
-        app:layout_constraintTop_toBottomOf="@+id/ModelNameEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ModelNameEditText"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 
     <EditText
         android:id="@+id/ModelNameEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="model name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/CompanyNameEditText"
-        app:layout_constraintTop_toBottomOf="@+id/ModelCodeEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ModelCodeEditText"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 
     <EditText
         android:id="@+id/EngineCapacityEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="engine capacity"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/GearBoxSpinner"
-        app:layout_constraintTop_toBottomOf="@+id/CompanyNameEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/CompanyNameEditText"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <EditText
         android:id="@+id/SeatsEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="seats"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/ColorEditText"
-        app:layout_constraintTop_toBottomOf="@+id/GearBoxSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/GearBoxSpinner"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 
     <EditText
         android:id="@+id/ColorEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="color"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/YearsManufactureEditText"
-        app:layout_constraintTop_toBottomOf="@+id/SeatsEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/SeatsEditText"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 
     <EditText
         android:id="@+id/YearsManufactureEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="year manufacture"
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/AddButton"
-        app:layout_constraintTop_toBottomOf="@+id/ColorEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ColorEditText"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 
     <Spinner
         android:id="@+id/GearBoxSpinner"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="35dp"
         app:layout_constraintBottom_toTopOf="@+id/SeatsEditText"
-        app:layout_constraintTop_toBottomOf="@+id/EngineCapacityEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/EngineCapacityEditText"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

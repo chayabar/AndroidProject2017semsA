@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/AddButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="add"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,49 +18,49 @@
 
     <EditText
         android:id="@+id/HouseBranchEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="house branch"
         android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/ModelNameEditText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/ModelNameEditText" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/ModelNameEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="model name"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/MileAgeEditText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HouseBranchEditText"
-        app:layout_constraintBottom_toTopOf="@+id/MileAgeEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/HouseBranchEditText" />
 
     <EditText
         android:id="@+id/MileAgeEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="mile age"
         android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/CarNumberEditText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ModelNameEditText"
-        app:layout_constraintBottom_toTopOf="@+id/CarNumberEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/ModelNameEditText" />
 
     <EditText
         android:id="@+id/CarNumberEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="car number"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/AddButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MileAgeEditText"
-        app:layout_constraintBottom_toTopOf="@+id/AddButton" />
+        app:layout_constraintTop_toBottomOf="@+id/MileAgeEditText" />
 </android.support.constraint.ConstraintLayout>
