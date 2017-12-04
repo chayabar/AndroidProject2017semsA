@@ -50,6 +50,6 @@ public class addOrderActivity extends Activity {
         editText2 = (EditText)findViewById( R.id.editText2 );
         CustomerIdEditText = (EditText)findViewById( R.id.CustomerIdEditText );
     }
-
+////sinuy
 
 }
