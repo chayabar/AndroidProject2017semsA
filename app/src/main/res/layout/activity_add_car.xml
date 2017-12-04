@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/AddButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="add"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,7 +18,7 @@
 
     <EditText
         android:id="@+id/HouseBranchEditText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="house branch"
@@ -30,7 +30,7 @@
 
     <EditText
         android:id="@+id/ModelNameEditText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="model name"
@@ -42,7 +42,7 @@
 
     <EditText
         android:id="@+id/MileAgeEditText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="mile age"
@@ -54,7 +54,7 @@
 
     <EditText
         android:id="@+id/CarNumberEditText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="car number"
