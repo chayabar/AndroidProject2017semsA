@@ -112,14 +112,14 @@
         android:ems="10"
         android:hint="Number of liters filled"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintBottom_toTopOf="@+id/ChargeEditText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/FuelFillingCheckBox"
         app:layout_constraintHorizontal_bias="1.0" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/ChargeEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"

@@ -49,11 +49,11 @@ public class RentConst {
 
     public static class OrderConst {
         public static final String CUSTUMERID = "_customerID";
-        public static final String ORDER = "orderStatus";
+        public static final String ORDERSTATUS = "orderStatus";
         public static final String CARNUMBER = "carNumber";
         public static final String STARTRENT = "startRent";
         public static final String ENDRENT = "endRent";
-        public static final String STARMILEAGE = "startMileAge";
+        public static final String STARTMILEAGE = "startMileAge";
         public static final String ENDMILEAGE = "endMileAge";
         public static final String FUELFILLING = "fuelFilling";
         public static final String FUELLITTER = "fuelLitter";
@@ -149,11 +149,11 @@ public class RentConst {
     public static ContentValues OrderToContentValues(Order order) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(OrderConst.CUSTUMERID, order.getCustomerID());
-        contentValues.put(OrderConst.ORDER, String.valueOf(order.getOrderStatus()));
+        contentValues.put(OrderConst.ORDERSTATUS, String.valueOf(order.getOrderStatus()));
         contentValues.put(OrderConst.CARNUMBER, order.getCarNumber());
         contentValues.put(OrderConst.STARTRENT, String.valueOf(order.getStartRent()));
         contentValues.put(OrderConst.ENDRENT, String.valueOf(order.getEndRent()));
-        contentValues.put(OrderConst.STARMILEAGE, order.getStartMileAge());
+        contentValues.put(OrderConst.STARTMILEAGE, order.getStartMileAge());
         contentValues.put(OrderConst.ENDMILEAGE, order.getEndMileAge());
         contentValues.put(OrderConst.FUELFILLING, order.getFuelFilling());
         contentValues.put(OrderConst.FUELLITTER, order.getFuelLitter());
@@ -165,11 +165,11 @@ public class RentConst {
     public static Order ContentValuesToOrder(ContentValues contentValues) {
         Order order = new Order();
         order.setCustomerID(contentValues.getAsInteger(OrderConst.CUSTUMERID));
-        //order.setOrderStatus(contentValues.get(OrderConst.ORDER));
+        //order.setOrderStatus(contentValues.get(OrderConst.ORDERSTATUS));
         order.setCarNumber(contentValues.getAsString(OrderConst.CARNUMBER));
         //order.setStartRent(contentValues.get(OrderConst.STARTRENT));
         //order.setEndRent(contentValues.get(OrderConst.ENDRENT));
-        order.setStartMileAge(contentValues.getAsFloat(OrderConst.STARMILEAGE));
+        order.setStartMileAge(contentValues.getAsFloat(OrderConst.STARTMILEAGE));
         order.setEndMileAge(contentValues.getAsFloat(OrderConst.ENDMILEAGE));
         order.setFuelFilling(contentValues.getAsBoolean(OrderConst.FUELFILLING));
         order.setFuelLitter(contentValues.getAsFloat(OrderConst.FUELLITTER));
