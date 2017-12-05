@@ -29,7 +29,7 @@ public class List_DBManager implements DB_manager {
     public static List<Car> cars;
     public static List<CarModel> carModels;
     public static List<Branch> branchs;
-
+    public static List<Order> orders;
     static {
         customers = new ArrayList<>();
         cars = new ArrayList<>();
@@ -79,10 +79,10 @@ public class List_DBManager implements DB_manager {
     @Override
     public boolean existorder(ContentValues neworder) {
         Order order = ContentValuesToOrder(neworder);
-//        for (Order item : orders)
-//            if (item.getOrderID() == order.getOrderID()) {
-//                return true;
-//            }
+        for (Order item : orders)
+            if (item.getOrderID() == order.getOrderID()) {
+                return true;
+            }
         return false;    }
 
     @Override
@@ -115,7 +115,9 @@ public class List_DBManager implements DB_manager {
 
     @Override
     public boolean addOrder(ContentValues newOrder) {
-        return false;
+        Order order = ContentValuesToOrder(newOrder);
+        orders.add(order);
+        return true;
     }
 
     @Override
@@ -167,7 +169,13 @@ public class List_DBManager implements DB_manager {
 
     @Override
     public boolean removeOrder(long id) {
-        return false;
+        Order orderToRemove = null;
+        for (Order item : orders)
+            if (item.getOrderID() == id) {
+                orderToRemove = item;
+                break;
+            }
+        return orders.remove(orderToRemove);
     }
 
     @Override
@@ -220,6 +228,13 @@ public class List_DBManager implements DB_manager {
 
     @Override
     public boolean updateOrder(int id, ContentValues values) {
+        Order order = ContentValuesToOrder(values);
+        order.setOrderID(id);
+        for (int i = 0; i < orders.size(); i++)
+            if (orders.get(i).getOrderID() == id) {
+                orders.set(i, order);
+                return true;
+            }
         return false;
     }
 
@@ -244,7 +259,5 @@ public class List_DBManager implements DB_manager {
     }
 
     @Override
-    public List<Order> getOrders() {
-        return null;
-    }
+    public List<Order> getOrders() {return orders;}
 }
