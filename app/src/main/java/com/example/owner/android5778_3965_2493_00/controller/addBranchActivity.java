@@ -3,6 +3,7 @@ package com.example.owner.android5778_3965_2493_00.controller;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +11,8 @@ import android.widget.EditText;
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
+import com.example.owner.android5778_3965_2493_00.model.entities.Branch;
+
 public class addBranchActivity extends Activity implements View.OnClickListener {
 
     private EditText AddressEditText;
