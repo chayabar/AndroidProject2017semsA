@@ -115,7 +115,9 @@ public class List_DBManager implements DB_manager {
 
     @Override
     public boolean addOrder(ContentValues newOrder) {
-        return false;
+        Order order = ContentValuesToOrder(newOrder);
+     //   orders.add(order);
+        return true;
     }
 
     @Override
@@ -167,6 +169,13 @@ public class List_DBManager implements DB_manager {
 
     @Override
     public boolean removeOrder(long id) {
+        Order orderToRemove = null;
+//        for (Order item : orders)
+//            if (item.getOrderID() == id) {
+//                orderToRemove = item;
+//                break;
+//            }
+//        return orders.remove(orderToRemove);
         return false;
     }
 
@@ -220,6 +229,13 @@ public class List_DBManager implements DB_manager {
 
     @Override
     public boolean updateOrder(int id, ContentValues values) {
+        Order order = ContentValuesToOrder(values);
+        order.setOrderID(id);
+//        for (int i = 0; i < orders.size(); i++)
+//            if (orders.get(i).getOrderID() == id) {
+//                orders.set(i, order);
+//                return true;
+//            }
         return false;
     }
 
@@ -244,7 +260,6 @@ public class List_DBManager implements DB_manager {
     }
 
     @Override
-    public List<Order> getOrders() {
-        return null;
-    }
+    public List<Order> getOrders() {//return orders;
+        return null;}
 }
