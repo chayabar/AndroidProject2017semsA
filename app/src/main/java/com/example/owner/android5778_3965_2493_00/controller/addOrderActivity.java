@@ -36,7 +36,7 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
     private EditText FuelLitterEditText;
     private EditText ChargeEditText;
     private EditText CustomerIdEditText;
-    private ScrollView scrollView7;
+    private ScrollView scrollView;
     private Button addButton;
 
     private void findViews() {
@@ -53,7 +53,7 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
         FuelLitterEditText = (EditText)findViewById( R.id.FuelLitterEditText );
         ChargeEditText = (EditText)findViewById( R.id.ChargeEditText);
         CustomerIdEditText = (EditText)findViewById( R.id.CustomerIdEditText );
-        scrollView7 = (ScrollView)findViewById( R.id.scrollView7 );
+        scrollView = (ScrollView)findViewById( R.id.scrollView );
         addButton = (Button)findViewById( R.id.addButton );
 
         addButton.setOnClickListener( this );
