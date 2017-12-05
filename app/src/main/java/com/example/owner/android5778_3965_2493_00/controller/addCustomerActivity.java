@@ -53,7 +53,7 @@ public class addCustomerActivity extends Activity implements View.OnClickListene
     public void onClick(View v) {
         if ( v == AddButton ) {
             // Handle clicks for AddButton
-
+            addCustomer();
         }
     }
     private void addCustomer() {

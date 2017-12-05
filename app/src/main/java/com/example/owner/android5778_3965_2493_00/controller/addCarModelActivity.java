@@ -4,12 +4,15 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
+import com.example.owner.android5778_3965_2493_00.model.entities.Enums;
 
 public class addCarModelActivity extends Activity implements View.OnClickListener {
 
@@ -46,7 +49,7 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             ColorEditText = (EditText)findViewById( R.id.ColorEditText );
             YearsManufactureEditText = (EditText)findViewById( R.id.YearsManufactureEditText );
             GearBoxSpinner = (Spinner)findViewById( R.id.GearBoxSpinner );
-
+            GearBoxSpinner.setAdapter(new ArrayAdapter<Enums.GearBox>(this, android.R.layout.simple_spinner_item, Enums.GearBox.values()));
             AddButton.setOnClickListener( this );
         }
 
@@ -71,7 +74,7 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             contentValues.put(RentConst.CarModelConst.ENGINECAPACITY, Float.valueOf(this.EngineCapacityEditText.getText().toString()));
             contentValues.put(RentConst.CarModelConst.COLOR, this.ColorEditText.getText().toString());
             contentValues.put(RentConst.CarModelConst.COMPANYNAME, this.CompanyNameEditText.getText().toString());
-            //contentValues.put(RentConst.CarModelConst.GEARBOX, this.GearBoxSpinner.getText().toString());
+            contentValues.put(RentConst.CarModelConst.GEARBOX, Enums.GearBox.valueOf(this.GearBoxSpinner.getSelectedItem().toString()));
             contentValues.put(RentConst.CarModelConst.MODELCODE, this.ModelCodeEditText.getText().toString());
             contentValues.put(RentConst.CarModelConst.MODELNAME, this.ModelNameEditText.getText().toString());
 

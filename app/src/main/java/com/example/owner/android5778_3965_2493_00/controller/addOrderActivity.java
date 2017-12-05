@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import android.widget.Spinner;
 
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
+import com.example.owner.android5778_3965_2493_00.model.entities.Enums;
 
 public class addOrderActivity extends Activity implements View.OnClickListener {
 
@@ -50,6 +52,9 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
         EndMileAgeEditText = (EditText)findViewById( R.id.EndMileAgeEditText );
         FuelFillingCheckBox = (CheckBox)findViewById( R.id.FuelFillingCheckBox );
         OrderStatusSpinner = (Spinner)findViewById( R.id.OrderStatusSpinner );
+        OrderStatusSpinner.setAdapter(new ArrayAdapter<Enums.OrderStatus>(this, android.R.layout.simple_spinner_item, Enums.OrderStatus.values()));
+
+
         FuelLitterEditText = (EditText)findViewById( R.id.FuelLitterEditText );
         ChargeEditText = (EditText)findViewById( R.id.ChargeEditText);
         CustomerIdEditText = (EditText)findViewById( R.id.CustomerIdEditText );
