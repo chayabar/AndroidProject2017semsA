@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.owner.android5778_3965_2493_00.R;
+import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
 import com.example.owner.android5778_3965_2493_00.model.entities.Enums;
 
@@ -74,11 +75,11 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             contentValues.put(RentConst.CarModelConst.ENGINECAPACITY, Float.valueOf(this.EngineCapacityEditText.getText().toString()));
             contentValues.put(RentConst.CarModelConst.COLOR, this.ColorEditText.getText().toString());
             contentValues.put(RentConst.CarModelConst.COMPANYNAME, this.CompanyNameEditText.getText().toString());
-            contentValues.put(RentConst.CarModelConst.GEARBOX, Enums.GearBox.valueOf(this.GearBoxSpinner.getSelectedItem().toString()));
+            contentValues.put(RentConst.CarModelConst.GEARBOX, this.GearBoxSpinner.getSelectedItem().toString());
             contentValues.put(RentConst.CarModelConst.MODELCODE, this.ModelCodeEditText.getText().toString());
             contentValues.put(RentConst.CarModelConst.MODELNAME, this.ModelNameEditText.getText().toString());
 
-            //DBManagerFactory.getManager().addCarModel(contentValues);
+            DBManagerFactory.getManager().addCarModel(contentValues);
         }
         catch (Exception e) {}
     }

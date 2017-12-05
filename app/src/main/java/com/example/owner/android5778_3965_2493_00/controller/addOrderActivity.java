@@ -12,6 +12,7 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 
 import com.example.owner.android5778_3965_2493_00.R;
+import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
 import com.example.owner.android5778_3965_2493_00.model.entities.Enums;
 
@@ -54,7 +55,6 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
         OrderStatusSpinner = (Spinner)findViewById( R.id.OrderStatusSpinner );
         OrderStatusSpinner.setAdapter(new ArrayAdapter<Enums.OrderStatus>(this, android.R.layout.simple_spinner_item, Enums.OrderStatus.values()));
 
-
         FuelLitterEditText = (EditText)findViewById( R.id.FuelLitterEditText );
         ChargeEditText = (EditText)findViewById( R.id.ChargeEditText);
         CustomerIdEditText = (EditText)findViewById( R.id.CustomerIdEditText );
@@ -79,10 +79,6 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
     private void addOrder() {
         final ContentValues contentValues = new ContentValues();
         try {
-
-
-
-//            CustomerIdEditText = (EditText)findViewById( R.id.CustomerIdEditText );
             int orderId = Integer.valueOf(this.OrderIdEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.ORDERID, orderId);
             contentValues.put(RentConst.OrderConst.CARNUMBER, this.CarNumberEditText.getText().toString());
@@ -93,14 +89,14 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
             float endMileAge = Integer.valueOf(this.EndMileAgeEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.ENDMILEAGE, endMileAge);
             contentValues.put(RentConst.OrderConst.FUELFILLING, this.FuelFillingCheckBox.getText().toString());
-            //contentValues.put(RentConst.OrderConst.ORDERSTATUS, this.OrderStatusSpinner.);How to get Spinner?
+            contentValues.put(RentConst.OrderConst.ORDERSTATUS, this.OrderStatusSpinner.getSelectedItem().toString());
             float fullLitter = Integer.valueOf(this.FuelLitterEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.FUELLITTER, fullLitter);
             float charge = Integer.valueOf(this.ChargeEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.CHARGE, charge);
             int customerId = Integer.valueOf(this.CustomerIdEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.CUSTUMERID, customerId);
-            //DBManagerFactory.getManager().addBranch(contentValues);
+            DBManagerFactory.getManager().addOrder(contentValues);
         }
         catch (Exception e) {}
     }

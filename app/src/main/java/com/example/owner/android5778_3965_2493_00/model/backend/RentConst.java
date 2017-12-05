@@ -6,7 +6,12 @@ import com.example.owner.android5778_3965_2493_00.model.entities.Branch;
 import com.example.owner.android5778_3965_2493_00.model.entities.Car;
 import com.example.owner.android5778_3965_2493_00.model.entities.CarModel;
 import com.example.owner.android5778_3965_2493_00.model.entities.Customer;
+import com.example.owner.android5778_3965_2493_00.model.entities.Enums;
 import com.example.owner.android5778_3965_2493_00.model.entities.Order;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by owner on 26/11/2017.
@@ -101,10 +106,15 @@ public class RentConst {
         contentValues.put(CarModelConst.COMPANYNAME, carModel.getCompanyName());
         contentValues.put(CarModelConst.MODELNAME, carModel.getModelName());
         contentValues.put(CarModelConst.ENGINECAPACITY, carModel.getEngineCapacity());
-        contentValues.put(CarModelConst.GEARBOX, String.valueOf(carModel.getGearBox()));
+        contentValues.put(CarModelConst.GEARBOX, carModel.getGearBox().toString());
         contentValues.put(CarModelConst.SEATS, carModel.getSeats());
         contentValues.put(CarModelConst.COLOR, carModel.getColor());
         contentValues.put(CarModelConst.YEARMANUFACTURE, String.valueOf(carModel.getYearManufacture()));
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+        String dateString = dateFormat.format(carModel.getYearManufacture());
+        contentValues.put(CarModelConst.YEARMANUFACTURE, dateString);
+
         return contentValues;
     }
 
@@ -114,10 +124,18 @@ public class RentConst {
         carModel.setCompanyName(contentValues.getAsString(CarModelConst.COMPANYNAME));
         carModel.setModelName(contentValues.getAsString(CarModelConst.MODELNAME));
         carModel.setEngineCapacity(contentValues.getAsFloat(CarModelConst.ENGINECAPACITY));
-        //carModel.setGearBox((Enums.GearBox)Enum.Parse(contentValues.getAsString(CarModelConst.GEARBOX)));
+        carModel.setGearBox(Enums.GearBox.valueOf(contentValues.getAsString(CarModelConst.GEARBOX)));
         carModel.setSeats(contentValues.getAsInteger(CarModelConst.SEATS));
         carModel.setColor(contentValues.getAsString(CarModelConst.COLOR));
-        //carModel.setYearManufacture(contentValues.getAsDate(CarModelConst.YEARMANUFACTURE));
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+        String dateString = contentValues.getAsString(CarModelConst.YEARMANUFACTURE);
+        try {
+            carModel.setYearManufacture(dateFormat.parse(dateString));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         return carModel;
     }
 
@@ -149,10 +167,17 @@ public class RentConst {
     public static ContentValues OrderToContentValues(Order order) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(OrderConst.CUSTUMERID, order.getCustomerID());
-        contentValues.put(OrderConst.ORDERSTATUS, String.valueOf(order.getOrderStatus()));
+        contentValues.put(OrderConst.ORDERSTATUS, order.getOrderStatus().toString());
         contentValues.put(OrderConst.CARNUMBER, order.getCarNumber());
-        contentValues.put(OrderConst.STARTRENT, String.valueOf(order.getStartRent()));
-        contentValues.put(OrderConst.ENDRENT, String.valueOf(order.getEndRent()));
+
+        DateFormat dateFormatStart = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+        String dateStringStart = dateFormatStart.format(order.getStartRent());
+        contentValues.put(OrderConst.STARTRENT, dateStringStart);
+
+        DateFormat dateFormatEnd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+        String dateStringEnd = dateFormatEnd.format(order.getEndRent());
+        contentValues.put(OrderConst.ENDRENT, dateStringEnd);
+
         contentValues.put(OrderConst.STARTMILEAGE, order.getStartMileAge());
         contentValues.put(OrderConst.ENDMILEAGE, order.getEndMileAge());
         contentValues.put(OrderConst.FUELFILLING, order.getFuelFilling());
@@ -165,16 +190,31 @@ public class RentConst {
     public static Order ContentValuesToOrder(ContentValues contentValues) {
         Order order = new Order();
         order.setCustomerID(contentValues.getAsInteger(OrderConst.CUSTUMERID));
-        //order.setOrderStatus(contentValues.get(OrderConst.ORDERSTATUS));
+        order.setOrderStatus(Enums.OrderStatus.valueOf(contentValues.getAsString(OrderConst.ORDERSTATUS)));
         order.setCarNumber(contentValues.getAsString(OrderConst.CARNUMBER));
-        //order.setStartRent(contentValues.get(OrderConst.STARTRENT));
-        //order.setEndRent(contentValues.get(OrderConst.ENDRENT));
+
+        DateFormat dateFormatStart = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+        String DateStartString = contentValues.getAsString(OrderConst.STARTRENT);
+        try {
+            order.setStartRent(dateFormatStart.parse(DateStartString));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        DateFormat dateFormatEnd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+        String DateEndString = contentValues.getAsString(OrderConst.ENDRENT);
+        try {
+            order.setStartRent(dateFormatEnd.parse(DateEndString));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         order.setStartMileAge(contentValues.getAsFloat(OrderConst.STARTMILEAGE));
         order.setEndMileAge(contentValues.getAsFloat(OrderConst.ENDMILEAGE));
         order.setFuelFilling(contentValues.getAsBoolean(OrderConst.FUELFILLING));
         order.setFuelLitter(contentValues.getAsFloat(OrderConst.FUELLITTER));
         order.setCharge(contentValues.getAsFloat(OrderConst.CHARGE));
-        //order.setOrderID(contentValues.getAsInteger(OrderConst.ORDERID));
+        order.setOrderID(contentValues.getAsInteger(OrderConst.ORDERID));
         return order;
     }
 }
