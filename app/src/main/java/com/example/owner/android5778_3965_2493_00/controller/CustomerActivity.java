@@ -21,12 +21,6 @@ public class CustomerActivity extends Activity implements View.OnClickListener {
         findViews();
     }
 
-    /**
-     * Find the Views in the layout<br />
-     * <br />
-     * Auto-created on 2017-11-30 21:33:44 by Android Layout Finder
-     * (http://www.buzzingandroid.com/tools/android-layout-finder)
-     */
     private void findViews() {
         AddButton = (Button)findViewById( R.id.AddButton );
         UpdateButton = (Button)findViewById( R.id.UpdateButton );
@@ -37,12 +31,7 @@ public class CustomerActivity extends Activity implements View.OnClickListener {
         deleteButton.setOnClickListener( this );
     }
 
-    /**
-     * Handle button click events<br />
-     * <br />
-     * Auto-created on 2017-11-30 21:33:44 by Android Layout Finder
-     * (http://www.buzzingandroid.com/tools/android-layout-finder)
-     */
+
     @Override
     public void onClick(View v) {
         if ( v == AddButton ) {

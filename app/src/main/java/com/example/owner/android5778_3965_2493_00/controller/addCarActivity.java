@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.owner.android5778_3965_2493_00.R;
+import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
 
 public class addCarActivity extends Activity implements View.OnClickListener {
@@ -25,12 +26,6 @@ public class addCarActivity extends Activity implements View.OnClickListener {
         findViews();
     }
 
-    /**
-     * Find the Views in the layout<br />
-     * <br />
-     * Auto-created on 2017-12-02 22:05:03 by Android Layout Finder
-     * (http://www.buzzingandroid.com/tools/android-layout-finder)
-     */
     private void findViews() {
         AddButton = (Button)findViewById( R.id.AddButton );
         HouseBranchEditText = (EditText)findViewById( R.id.HouseBranchEditText );
@@ -62,11 +57,8 @@ public class addCarActivity extends Activity implements View.OnClickListener {
             contentValues.put(RentConst.CarConst.HOUSEBRANCH, Integer.valueOf(this.HouseBranchEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.MILEAGE, Float.valueOf(this.MileAgeEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.MODELNAME, this.ModelNameEditText.getText().toString());
-            //DBManagerFactory.getManager().addCar(contentValues);
+            DBManagerFactory.getManager().addCar(contentValues);
         }
         catch (Exception e) {}
     }
-
-
-
 }

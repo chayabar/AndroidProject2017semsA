@@ -24,6 +24,7 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_add_order);
         findViews();
     }
+
     private EditText OrderIdEditText;
     private EditText CarNumberEditText;
     private EditText StartRentEditText;
@@ -38,12 +39,6 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
     private ScrollView scrollView7;
     private Button addButton;
 
-    /**
-     * Find the Views in the layout<br />
-     * <br />
-     * Auto-created on 2017-12-04 21:25:25 by Android Layout Finder
-     * (http://www.buzzingandroid.com/tools/android-layout-finder)
-     */
     private void findViews() {
         OrderIdEditText = (EditText)findViewById( R.id.OrderIdEditText );
         CarNumberEditText = (EditText)findViewById( R.id.CarNumberEditText );
@@ -64,15 +59,10 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
         addButton.setOnClickListener( this );
     }
 
-    /**
-     * Handle button click events<br />
-     * <br />
-     * Auto-created on 2017-12-04 21:25:25 by Android Layout Finder
-     * (http://www.buzzingandroid.com/tools/android-layout-finder)
-     */
     @Override
     public void onClick(View v) {
         if ( v == addButton ) {
+            // Handle clicks for AddButton
             addOrder();
         }
     }
@@ -100,5 +90,4 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
         }
         catch (Exception e) {}
     }
-
 }

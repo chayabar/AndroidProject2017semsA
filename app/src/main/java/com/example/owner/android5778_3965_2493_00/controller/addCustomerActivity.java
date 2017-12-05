@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.owner.android5778_3965_2493_00.R;
+import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
 
 public class addCustomerActivity extends Activity implements View.OnClickListener {
@@ -16,6 +17,7 @@ public class addCustomerActivity extends Activity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_customer);
+        findViews();
     }
     private EditText FirstNameEditText;
     private EditText LastNameEditText;
@@ -25,12 +27,6 @@ public class addCustomerActivity extends Activity implements View.OnClickListene
     private EditText CreditEditText;
     private Button AddButton;
 
-    /**
-     * Find the Views in the layout<br />
-     * <br />
-     * Auto-created on 2017-12-03 09:56:59 by Android Layout Finder
-     * (http://www.buzzingandroid.com/tools/android-layout-finder)
-     */
     private void findViews() {
         FirstNameEditText = (EditText)findViewById( R.id.firstNameeditText );
         LastNameEditText = (EditText)findViewById( R.id.LastNameEditText );
@@ -43,12 +39,6 @@ public class addCustomerActivity extends Activity implements View.OnClickListene
         AddButton.setOnClickListener( this );
     }
 
-    /**
-     * Handle button click events<br />
-     * <br />
-     * Auto-created on 2017-12-03 09:56:59 by Android Layout Finder
-     * (http://www.buzzingandroid.com/tools/android-layout-finder)
-     */
     @Override
     public void onClick(View v) {
         if ( v == AddButton ) {
@@ -66,9 +56,8 @@ public class addCustomerActivity extends Activity implements View.OnClickListene
             contentValues.put(RentConst.CustomerConst.LASTNAME, this.LastNameEditText.getText().toString());
             contentValues.put(RentConst.CustomerConst.PHONENUMBER, this.PhoneNumEditText.getText().toString());
 
-            //DBManagerFactory.getManager().addCustomerModel(contentValues);
+            DBManagerFactory.getManager().addCustomer(contentValues);
         }
         catch (Exception e) {}
     }
-
 }

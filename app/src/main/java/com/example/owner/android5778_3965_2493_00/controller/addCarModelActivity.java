@@ -34,12 +34,6 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             findViews();
         }
 
-        /**
-         * Find the Views in the layout<br />
-         * <br />
-         * Auto-created on 2017-12-02 22:29:53 by Android Layout Finder
-         * (http://www.buzzingandroid.com/tools/android-layout-finder)
-         */
         private void findViews() {
             AddButton = (Button)findViewById( R.id.AddButton );
             ModelNameEditText = (EditText)findViewById( R.id.ModelNameEditText );
@@ -51,15 +45,10 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             YearsManufactureEditText = (EditText)findViewById( R.id.YearsManufactureEditText );
             GearBoxSpinner = (Spinner)findViewById( R.id.GearBoxSpinner );
             GearBoxSpinner.setAdapter(new ArrayAdapter<Enums.GearBox>(this, android.R.layout.simple_spinner_item, Enums.GearBox.values()));
+
             AddButton.setOnClickListener( this );
         }
 
-        /**
-         * Handle button click events<br />
-         * <br />
-         * Auto-created on 2017-12-02 22:29:53 by Android Layout Finder
-         * (http://www.buzzingandroid.com/tools/android-layout-finder)
-         */
         @Override
         public void onClick(View v) {
             if ( v == AddButton ) {
@@ -67,6 +56,7 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
                 addCarModel();
             }
         }
+
     private void addCarModel() {
         final ContentValues contentValues = new ContentValues();
         try {
@@ -83,7 +73,5 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
         }
         catch (Exception e) {}
     }
-
-
-    }
+ }
 

@@ -25,12 +25,6 @@ public class  MenuActivity extends Activity implements View.OnClickListener {
 
     }
 
-    /**
-     * Find the Views in the layout<br />
-     * <br />
-     * Auto-created on 2017-11-29 12:33:39 by Android Layout Finder
-     * (http://www.buzzingandroid.com/tools/android-layout-finder)
-     */
     private void findViews() {
         BranchButton = (Button)findViewById( R.id.BranchButton );
         CarButton = (Button)findViewById( R.id.CarButton );
@@ -45,12 +39,6 @@ public class  MenuActivity extends Activity implements View.OnClickListener {
         OrderButton.setOnClickListener( this );
     }
 
-    /**
-     * Handle button click events<br />
-     * <br />
-     * Auto-created on 2017-11-29 12:33:39 by Android Layout Finder
-     * (http://www.buzzingandroid.com/tools/android-layout-finder)
-     */
     @Override
     public void onClick(View v) {
         if ( v == BranchButton ) {
