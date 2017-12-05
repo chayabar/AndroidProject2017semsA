@@ -56,9 +56,8 @@ public class addBranchActivity extends Activity implements View.OnClickListener 
     private void addBranch() {
         final ContentValues contentValues = new ContentValues();
         try {
-            int branchNumber = Integer.valueOf(this.BranchNumberEditText.getText().toString());
-            contentValues.put(RentConst.BranchConst.BRANCHNUMBER, branchNumber);
-            contentValues.put(RentConst.BranchConst.PARKINGSPACES, this.parkingSpacesEditText.getText().toString());
+            contentValues.put(RentConst.BranchConst.BRANCHNUMBER, Integer.valueOf(this.BranchNumberEditText.getText().toString()));
+            contentValues.put(RentConst.BranchConst.PARKINGSPACES, Integer.valueOf(this.parkingSpacesEditText.getText().toString()));
             contentValues.put(RentConst.BranchConst.ADDRESS, this.AddressEditText.getText().toString());
             //DBManagerFactory.getManager().addBranch(contentValues);
         }

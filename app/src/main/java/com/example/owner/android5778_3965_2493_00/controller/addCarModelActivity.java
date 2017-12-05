@@ -1,6 +1,7 @@
 package com.example.owner.android5778_3965_2493_00.controller;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,7 +9,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.owner.android5778_3965_2493_00.R;
-    public class addCarModelActivity extends Activity implements View.OnClickListener {
+import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
+
+public class addCarModelActivity extends Activity implements View.OnClickListener {
 
         private Button AddButton;
         private EditText ModelCodeEditText;
@@ -57,9 +60,25 @@ import com.example.owner.android5778_3965_2493_00.R;
         public void onClick(View v) {
             if ( v == AddButton ) {
                 // Handle clicks for AddButton
+                addCarModel();
             }
         }
+    private void addCarModel() {
+        final ContentValues contentValues = new ContentValues();
+        try {
+            contentValues.put(RentConst.CarModelConst.YEARMANUFACTURE, this.YearsManufactureEditText.getText().toString());
+            contentValues.put(RentConst.CarModelConst.SEATS, Integer.valueOf(this.SeatsEditText.getText().toString()));
+            contentValues.put(RentConst.CarModelConst.ENGINECAPACITY, Float.valueOf(this.EngineCapacityEditText.getText().toString()));
+            contentValues.put(RentConst.CarModelConst.COLOR, this.ColorEditText.getText().toString());
+            contentValues.put(RentConst.CarModelConst.COMPANYNAME, this.CompanyNameEditText.getText().toString());
+            //contentValues.put(RentConst.CarModelConst.GEARBOX, this.GearBoxSpinner.getText().toString());
+            contentValues.put(RentConst.CarModelConst.MODELCODE, this.ModelCodeEditText.getText().toString());
+            contentValues.put(RentConst.CarModelConst.MODELNAME, this.ModelNameEditText.getText().toString());
 
+            //DBManagerFactory.getManager().addCarModel(contentValues);
+        }
+        catch (Exception e) {}
+    }
 
 
     }

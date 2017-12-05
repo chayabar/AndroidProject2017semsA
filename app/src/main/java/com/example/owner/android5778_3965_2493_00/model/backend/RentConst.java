@@ -37,7 +37,7 @@ public class RentConst {
         public static final String YEARMANUFACTURE = "yearManufacture";
     }
 
-    public static class CustumerConst {
+    public static class CustomerConst {
         public static final String ID = "_ID";
         public static final String CUSTOMERID = "customerID";
         public static final String LASTNAME = "lastName";
@@ -123,26 +123,26 @@ public class RentConst {
 
     public static ContentValues CustomerToContentValues(Customer customer) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(CustumerConst.CUSTOMERID, customer.getCustomerID());
-        contentValues.put(CustumerConst.LASTNAME, customer.getLastName());
-        contentValues.put(CustumerConst.FIRSTNAME, customer.getFirstName());
-        contentValues.put(CustumerConst.ID, customer.getID());
-        contentValues.put(CustumerConst.PHONENUMBER, customer.getPhoneNumber());
-        contentValues.put(CustumerConst.EMAIL, customer.geteMail());
-        contentValues.put(CustumerConst.CREDITCARD, customer.getCreditCard());
+        contentValues.put(CustomerConst.CUSTOMERID, customer.getCustomerID());
+        contentValues.put(CustomerConst.LASTNAME, customer.getLastName());
+        contentValues.put(CustomerConst.FIRSTNAME, customer.getFirstName());
+        contentValues.put(CustomerConst.ID, customer.getID());
+        contentValues.put(CustomerConst.PHONENUMBER, customer.getPhoneNumber());
+        contentValues.put(CustomerConst.EMAIL, customer.geteMail());
+        contentValues.put(CustomerConst.CREDITCARD, customer.getCreditCard());
         return contentValues;
     }
 
 
     public static Customer ContentValuesToCustomer(ContentValues contentValues) {
         Customer customer = new Customer();
-        customer.setCustomerID(contentValues.getAsInteger(CustumerConst.CUSTOMERID));
-        customer.setLastName(contentValues.getAsString(CustumerConst.LASTNAME));
-        customer.setFirstName(contentValues.getAsString(CustumerConst.FIRSTNAME));
-        customer.setID(contentValues.getAsInteger(CustumerConst.ID));
-        customer.setPhoneNumber(contentValues.getAsString(CustumerConst.PHONENUMBER));
-        customer.seteMail(contentValues.getAsString(CustumerConst.EMAIL));
-        customer.setCreditCard(contentValues.getAsString(CustumerConst.CREDITCARD));
+        customer.setCustomerID(contentValues.getAsInteger(CustomerConst.CUSTOMERID));
+        customer.setLastName(contentValues.getAsString(CustomerConst.LASTNAME));
+        customer.setFirstName(contentValues.getAsString(CustomerConst.FIRSTNAME));
+        customer.setID(contentValues.getAsInteger(CustomerConst.ID));
+        customer.setPhoneNumber(contentValues.getAsString(CustomerConst.PHONENUMBER));
+        customer.seteMail(contentValues.getAsString(CustomerConst.EMAIL));
+        customer.setCreditCard(contentValues.getAsString(CustomerConst.CREDITCARD));
         return customer;
     }
 
