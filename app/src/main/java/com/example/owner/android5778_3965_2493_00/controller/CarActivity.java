@@ -49,7 +49,12 @@ public class CarActivity extends Activity implements View.OnClickListener {
             // Handle clicks for deleteButton
         } else if ( v == listCarsButton ) {
             // Handle clicks for listCarsButton
+            showCarList();
         }
     }
 
+    private void showCarList() {
+        Intent intent = new Intent(this, CarListActivity.class);
+        startActivity(intent);
+    }
 }
