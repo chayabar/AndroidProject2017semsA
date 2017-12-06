@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:text="add car"
         app:layout_constraintBottom_toTopOf="@+id/UpdateButton"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/UpdateButton"
@@ -22,17 +22,27 @@
         android:layout_height="wrap_content"
         android:text="update car"
         app:layout_constraintBottom_toTopOf="@+id/deleteButton"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AddButton" />
+        app:layout_constraintTop_toBottomOf="@+id/AddButton"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="delete car"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UpdateButton" />
+        app:layout_constraintTop_toBottomOf="@+id/UpdateButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/listCarsButton" />
+
+    <Button
+        android:id="@+id/listCarsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All cars"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deleteButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>

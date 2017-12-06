@@ -13,6 +13,8 @@ public class CarActivity extends Activity implements View.OnClickListener {
     private Button AddButton;
     private Button UpdateButton;
     private Button deleteButton;
+    private Button listCarsButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +27,13 @@ public class CarActivity extends Activity implements View.OnClickListener {
         AddButton = (Button)findViewById( R.id.AddButton );
         UpdateButton = (Button)findViewById( R.id.UpdateButton );
         deleteButton = (Button)findViewById( R.id.deleteButton );
+        listCarsButton = (Button)findViewById( R.id.listCarsButton );
+
 
         AddButton.setOnClickListener( this );
         UpdateButton.setOnClickListener( this );
         deleteButton.setOnClickListener( this );
+        listCarsButton.setOnClickListener( this );
     }
 
 
@@ -42,6 +47,9 @@ public class CarActivity extends Activity implements View.OnClickListener {
             // Handle clicks for UpdateButton
         } else if ( v == deleteButton ) {
             // Handle clicks for deleteButton
+        } else if ( v == listCarsButton ) {
+            // Handle clicks for listCarsButton
         }
     }
+
 }
