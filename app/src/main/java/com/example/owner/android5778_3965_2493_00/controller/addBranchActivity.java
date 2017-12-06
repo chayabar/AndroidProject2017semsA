@@ -2,11 +2,13 @@ package com.example.owner.android5778_3965_2493_00.controller;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
@@ -50,7 +52,20 @@ public class addBranchActivity extends Activity implements View.OnClickListener 
             contentValues.put(RentConst.BranchConst.BRANCHNUMBER, Integer.valueOf(this.BranchNumberEditText.getText().toString()));
             contentValues.put(RentConst.BranchConst.PARKINGSPACES, Integer.valueOf(this.parkingSpacesEditText.getText().toString()));
             contentValues.put(RentConst.BranchConst.ADDRESS, this.AddressEditText.getText().toString());
-            DBManagerFactory.getManager().addBranch(contentValues);
+           // DBManagerFactory.getManager().addBranch(contentValues);
+
+            new AsyncTask<Void, Void, Boolean>() {
+                @Override
+                protected void onPostExecute(Boolean idResult) {
+                    super.onPostExecute(idResult);
+                    if (idResult == true)
+                        Toast.makeText(getBaseContext(), "the branch inserted: " + idResult, Toast.LENGTH_LONG).show();
+                }
+                @Override
+                protected Boolean doInBackground(Void... params) {
+                    return DBManagerFactory.getManager().addBranch(contentValues);
+                }
+            }.execute();
         }
         catch (Exception e) {}
     }
