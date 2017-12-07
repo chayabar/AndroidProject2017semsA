@@ -1,6 +1,5 @@
 //package com.example.owner.android5778_3965_2493_00.controller;
 //
-//
 //import android.app.Activity;
 //import android.content.ClipData;
 //import android.os.Bundle;
