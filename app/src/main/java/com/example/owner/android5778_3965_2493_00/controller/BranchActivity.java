@@ -48,7 +48,7 @@ public class BranchActivity extends Activity implements View.OnClickListener {
         } else if ( v == deleteButton ) {
             // Handle clicks for deleteButton
         } else if ( v == AllbranchesButton ) {
-           DBManagerFactory.getManager().getBranchs();
+            AllbranchesButton.setOnClickListener(this);
         }
     }
 
