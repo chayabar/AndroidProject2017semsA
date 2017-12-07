@@ -29,11 +29,13 @@ public class CarListActivity extends Activity {
     void initItemByListView() {
         final List<Car> myList = DBManagerFactory.getManager().getCars();
         ListView listView = new ListView(this);
+        //array adaptor is for Car (the class) in the example "item" is for item class they have...
         ArrayAdapter<Car> adapter = new ArrayAdapter<Car>(this, R.layout.row_car, myList) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 if (convertView == null)
                 {
+                    //the first argument is the window we are in : "CarListActivity.this"
                     convertView = View.inflate(CarListActivity.this ,R.layout.row_car, null);
                 }
                 TextView productHouseBranchTextView = (TextView) convertView.findViewById(R.id.HouseBranchEditText);
