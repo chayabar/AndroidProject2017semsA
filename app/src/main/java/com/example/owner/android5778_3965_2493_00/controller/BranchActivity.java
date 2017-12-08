@@ -26,30 +26,35 @@ public class BranchActivity extends Activity implements View.OnClickListener {
     }
 
     private void findViews() {
-        AddButton = (Button)findViewById( R.id.AddButton );
-        UpdateButton = (Button)findViewById( R.id.UpdateButton );
-        deleteButton = (Button)findViewById( R.id.deleteButton );
-        AllbranchesButton = (Button)findViewById( R.id.AllbranchesButton );
+        AddButton = (Button) findViewById(R.id.AddButton);
+        UpdateButton = (Button) findViewById(R.id.UpdateButton);
+        deleteButton = (Button) findViewById(R.id.deleteButton);
+        AllbranchesButton = (Button) findViewById(R.id.AllbranchesButton);
 
-        AddButton.setOnClickListener( this );
-        UpdateButton.setOnClickListener( this );
-        deleteButton.setOnClickListener( this );
-        AllbranchesButton.setOnClickListener( this );
+        AddButton.setOnClickListener(this);
+        UpdateButton.setOnClickListener(this);
+        deleteButton.setOnClickListener(this);
+        AllbranchesButton.setOnClickListener(this);
     }
 
 
     @Override
     public void onClick(View v) {
-        if ( v == AddButton ) {
+        if (v == AddButton) {
             Intent intent = new Intent(this, addBranchActivity.class);
             startActivity(intent);
-        } else if ( v == UpdateButton ) {
+        } else if (v == UpdateButton) {
             // Handle clicks for UpdateButton
-        } else if ( v == deleteButton ) {
+        } else if (v == deleteButton) {
             // Handle clicks for deleteButton
-        } else if ( v == AllbranchesButton ) {
-            AllbranchesButton.setOnClickListener(this);
+        } else if (v == AllbranchesButton) {
+            showBranchList();
         }
+    }
+
+    private void showBranchList() {
+        Intent intent = new Intent(this, BranchListActivity.class);
+        startActivity(intent);
     }
 
 }

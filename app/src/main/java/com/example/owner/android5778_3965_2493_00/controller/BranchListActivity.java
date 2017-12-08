@@ -31,7 +31,7 @@ public class BranchListActivity extends Activity {
         void initItemByListView() {
             final List<Branch> myList = DBManagerFactory.getManager().getBranchs();
             ListView listView = new ListView(this);
-            //array adaptor is for Car (the class) in the example "item" is for item class they have...
+            //array adaptor is for Branch (the class) in the example "item" is for item class they have...
             ArrayAdapter<Branch> adapter = new ArrayAdapter<Branch>(this, R.layout.item_row, myList) {
                 @Override
                 public View getView(int position, View convertView, ViewGroup parent) {
@@ -41,10 +41,10 @@ public class BranchListActivity extends Activity {
                         convertView = View.inflate(BranchListActivity.this ,R.layout.item_row, null);
                     }
 
-                    TextView productitemAddrssTextView = (TextView) convertView.findViewById(R.id.itemName);
-                    TextView productitemIdTextView = (TextView) convertView.findViewById(R.id.itemId);
-                    productitemAddrssTextView.setText(myList.get(position).getAddress());
-                    productitemIdTextView.setText(((Integer) myList.get(position).getBranchNumber()).toString());
+                    TextView productItemAddressTextView = (TextView) convertView.findViewById(R.id.itemName);
+                    TextView productItemIdTextView = (TextView) convertView.findViewById(R.id.itemId);
+                    productItemAddressTextView.setText(myList.get(position).getAddress());
+                    productItemIdTextView.setText(((Integer) myList.get(position).getBranchNumber()).toString());
                     return convertView;
                     // return super.getView(position, convertView, parent);
                 }
