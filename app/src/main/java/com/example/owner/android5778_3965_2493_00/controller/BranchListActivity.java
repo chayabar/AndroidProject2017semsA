@@ -46,7 +46,7 @@ public class BranchListActivity extends Activity {
                     productItemAddressTextView.setText(myList.get(position).getAddress());
                     productItemIdTextView.setText(((Integer) myList.get(position).getBranchNumber()).toString());
                     return convertView;
-                    // return super.getView(position, convertView, parent);
+                    // return super.getView(position, convertView, parent) ;
                 }
             };
             listView.setAdapter(adapter);
