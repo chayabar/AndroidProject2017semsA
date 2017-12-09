@@ -84,18 +84,19 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
 //            String dateString = dateFormat.format(startRent);
             contentValues.put(RentConst.OrderConst.STARTRENT, this.StartRentEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.ENDRENT, this.EndRentEditText.getText().toString());
-            float startMileAge = Integer.valueOf(this.StartMileAgeEditText.getText().toString());
+            float startMileAge = Float.valueOf(this.StartMileAgeEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.STARTMILEAGE, startMileAge);
-            float endMileAge = Integer.valueOf(this.EndMileAgeEditText.getText().toString());
+            float endMileAge = Float.valueOf(this.EndMileAgeEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.ENDMILEAGE, endMileAge);
             contentValues.put(RentConst.OrderConst.FUELFILLING, this.FuelFillingCheckBox.getText().toString());
             contentValues.put(RentConst.OrderConst.ORDERSTATUS, this.OrderStatusSpinner.getSelectedItem().toString());
-            float fullLitter = Integer.valueOf(this.FuelLitterEditText.getText().toString());
+            float fullLitter = Float.valueOf(this.FuelLitterEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.FUELLITTER, fullLitter);
-            float charge = Integer.valueOf(this.ChargeEditText.getText().toString());
+            float charge = Float.valueOf(this.ChargeEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.CHARGE, charge);
             int customerId = Integer.valueOf(this.CustomerIdEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.CUSTUMERID, customerId);
+
 
             //DBManagerFactory.getManager().addOrder(contentValues);
             new AsyncTask<Void, Void, Boolean>() {

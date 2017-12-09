@@ -190,7 +190,7 @@ public class RentConst {
         order.setOrderStatus(Enums.OrderStatus.valueOf(contentValues.getAsString(OrderConst.ORDERSTATUS)));
         order.setCarNumber(contentValues.getAsString(OrderConst.CARNUMBER));
 
-        DateFormat dateFormatStart = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+        DateFormat dateFormatStart = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // like MySQL Format
         String DateStartString = contentValues.getAsString(OrderConst.STARTRENT);
         try {
             order.setStartRent(dateFormatStart.parse(DateStartString));
@@ -198,10 +198,10 @@ public class RentConst {
             e.printStackTrace();
         }
 
-        DateFormat dateFormatEnd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+        DateFormat dateFormatEnd = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // like MySQL Format
         String DateEndString = contentValues.getAsString(OrderConst.ENDRENT);
         try {
-            order.setStartRent(dateFormatEnd.parse(DateEndString));
+            order.setEndRent(dateFormatEnd.parse(DateEndString));
         } catch (ParseException e) {
             e.printStackTrace();
         }

@@ -13,6 +13,8 @@ public class OrderActivity extends Activity implements View.OnClickListener {
     private Button AddButton;
     private Button UpdateButton;
     private Button deleteButton;
+    private Button ListCarModelButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +27,12 @@ public class OrderActivity extends Activity implements View.OnClickListener {
         AddButton = (Button)findViewById( R.id.AddButton );
         UpdateButton = (Button)findViewById( R.id.UpdateButton );
         deleteButton = (Button)findViewById( R.id.deleteButton );
+        ListCarModelButton = (Button)findViewById( R.id.ListCarModelButton );
 
         AddButton.setOnClickListener( this );
         UpdateButton.setOnClickListener( this );
         deleteButton.setOnClickListener( this );
+        ListCarModelButton.setOnClickListener( this );
     }
 
 
@@ -42,6 +46,14 @@ public class OrderActivity extends Activity implements View.OnClickListener {
             // Handle clicks for UpdateButton
         } else if ( v == deleteButton ) {
             // Handle clicks for deleteButton
+        } else if ( v == ListCarModelButton ) {
+            // Handle clicks for ListCarModelButton
+            showOrderList();
         }
+    }
+
+    private void showOrderList() {
+        Intent intent = new Intent(this, OrderListActivity.class);
+        startActivity(intent);
     }
 }

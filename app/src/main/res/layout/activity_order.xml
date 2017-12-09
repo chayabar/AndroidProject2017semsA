@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.owner.android5778_3965_2493_00.controller.BranchActivity">
+    tools:context="com.example.owner.android5778_3965_2493_00.controller.BranchActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
     <Button
         android:id="@+id/AddButton"
@@ -12,8 +14,9 @@
         android:layout_height="wrap_content"
         android:text="add order"
         app:layout_constraintBottom_toTopOf="@+id/UpdateButton"
-        app:layout_constraintLeft_toLeftOf="@+id/UpdateButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/UpdateButton"
@@ -21,17 +24,28 @@
         android:layout_height="wrap_content"
         android:text="update order"
         app:layout_constraintBottom_toTopOf="@+id/deleteButton"
-        app:layout_constraintLeft_toLeftOf="@+id/deleteButton"
-        app:layout_constraintRight_toRightOf="@+id/deleteButton"
-        app:layout_constraintTop_toBottomOf="@+id/AddButton" />
+        app:layout_constraintTop_toBottomOf="@+id/AddButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="delete order"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ListCarModelButton"
+        app:layout_constraintTop_toBottomOf="@+id/UpdateButton"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UpdateButton" />
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/ListCarModelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Orders"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deleteButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
