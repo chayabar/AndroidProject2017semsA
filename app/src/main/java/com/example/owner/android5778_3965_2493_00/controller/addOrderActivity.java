@@ -18,6 +18,12 @@ import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
 import com.example.owner.android5778_3965_2493_00.model.entities.Enums;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
+
 public class addOrderActivity extends Activity implements View.OnClickListener {
 
     @Override
@@ -51,7 +57,6 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
         FuelFillingCheckBox = (CheckBox)findViewById( R.id.FuelFillingCheckBox );
         OrderStatusSpinner = (Spinner)findViewById( R.id.OrderStatusSpinner );
         OrderStatusSpinner.setAdapter(new ArrayAdapter<Enums.OrderStatus>(this, android.R.layout.simple_spinner_item, Enums.OrderStatus.values()));
-
         FuelLitterEditText = (EditText)findViewById( R.id.FuelLitterEditText );
         ChargeEditText = (EditText)findViewById( R.id.ChargeEditText);
         CustomerIdEditText = (EditText)findViewById( R.id.CustomerIdEditText );
@@ -74,6 +79,9 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
             int orderId = Integer.valueOf(this.OrderIdEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.ORDERID, orderId);
             contentValues.put(RentConst.OrderConst.CARNUMBER, this.CarNumberEditText.getText().toString());
+//            Date startRent = StartRentEditText.getText().toString();
+//            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+//            String dateString = dateFormat.format(startRent);
             contentValues.put(RentConst.OrderConst.STARTRENT, this.StartRentEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.ENDRENT, this.EndRentEditText.getText().toString());
             float startMileAge = Integer.valueOf(this.StartMileAgeEditText.getText().toString());

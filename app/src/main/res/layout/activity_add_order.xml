@@ -27,8 +27,7 @@
             <EditText
                 android:id="@+id/CustomerIdEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="customer ID"
                 android:inputType="number"
@@ -41,8 +40,7 @@
             <Spinner
                 android:id="@+id/OrderStatusSpinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 app:layout_constraintBottom_toTopOf="@+id/CarNumberEditText"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -52,8 +50,7 @@
             <EditText
                 android:id="@+id/CarNumberEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Car number"
                 android:inputType="textPersonName"
@@ -66,36 +63,23 @@
             <EditText
                 android:id="@+id/StartRentEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Start rent"
-                android:inputType="date"
-                app:layout_constraintBottom_toTopOf="@+id/EndRentEditText"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/CarNumberEditText" />
+                android:inputType="date" />
 
             <EditText
                 android:id="@+id/EndRentEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="End rent"
-                android:inputType="date"
-                app:layout_constraintBottom_toTopOf="@+id/StartMileAgeEditText"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/StartRentEditText" />
+                android:inputType="date" />
 
             <EditText
                 android:id="@+id/StartMileAgeEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Start Mile Age"
                 android:inputType="numberDecimal"
@@ -108,8 +92,7 @@
             <EditText
                 android:id="@+id/EndMileAgeEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="End Mile Age"
                 android:inputType="numberDecimal"
@@ -122,8 +105,7 @@
             <CheckBox
                 android:id="@+id/FuelFillingCheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:text="Fuel Filling"
                 app:layout_constraintBottom_toTopOf="@+id/FuelLitterEditText"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -134,8 +116,7 @@
             <EditText
                 android:id="@+id/FuelLitterEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Number of litters filled"
                 android:inputType="numberDecimal"
@@ -148,8 +129,7 @@
             <EditText
                 android:id="@+id/ChargeEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Total payment"
                 android:inputType="numberDecimal"
@@ -162,8 +142,7 @@
             <EditText
                 android:id="@+id/OrderIdEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Order id"
                 android:inputType="number"
@@ -176,8 +155,7 @@
             <Button
                 android:id="@+id/addButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:text="ADD"
                 tools:layout_editor_absoluteX="148dp"
                 tools:layout_editor_absoluteY="484dp" />

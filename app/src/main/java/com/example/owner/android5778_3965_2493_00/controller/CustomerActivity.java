@@ -13,6 +13,7 @@ public class CustomerActivity extends Activity implements View.OnClickListener {
     private Button AddButton;
     private Button UpdateButton;
     private Button deleteButton;
+    private Button ListCustomerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,14 @@ public class CustomerActivity extends Activity implements View.OnClickListener {
         AddButton = (Button)findViewById( R.id.AddButton );
         UpdateButton = (Button)findViewById( R.id.UpdateButton );
         deleteButton = (Button)findViewById( R.id.deleteButton );
+        ListCustomerButton = (Button)findViewById( R.id.ListCustomerButton );
+
 
         AddButton.setOnClickListener( this );
         UpdateButton.setOnClickListener( this );
         deleteButton.setOnClickListener( this );
+        ListCustomerButton.setOnClickListener( this );
+
     }
 
 
@@ -42,6 +47,14 @@ public class CustomerActivity extends Activity implements View.OnClickListener {
             // Handle clicks for UpdateButton
         } else if ( v == deleteButton ) {
             // Handle clicks for deleteButton
+        } else if ( v == ListCustomerButton ) {
+            // Handle clicks for ListCustomerButton
+            showCustomerList();
         }
+    }
+
+    private void showCustomerList() {
+        Intent intent = new Intent(this, CustomerListActivity.class);
+        startActivity(intent);
     }
 }
