@@ -29,6 +29,7 @@
         <activity android:name=".controller.addCarModelActivity" />
         <activity android:name=".controller.BranchListActivity" />
         <activity android:name=".controller.CarListActivity" />
+        <activity android:name=".controller.CarModelListActivity"></activity>
     </application>
 
 </manifest>

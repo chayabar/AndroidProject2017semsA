@@ -72,9 +72,7 @@ public class CarModel {
         this.color = color;
     }
 
-    public Date getYearManufacture() {
-        return yearManufacture;
-    }
+    public Date getYearManufacture() { return yearManufacture; }
 
     public void setYearManufacture(Date yearManufacture) {
         this.yearManufacture = yearManufacture;

@@ -34,6 +34,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
         contentValues.put(RentConst.CarConst.MODELNAME, "modeltoyota");
         DBManagerFactory.getManager().addCar(contentValues);
 
+        contentValues.put(RentConst.CarModelConst.YEARMANUFACTURE, "2017");
+        contentValues.put(RentConst.CarModelConst.SEATS, "5");
+        contentValues.put(RentConst.CarModelConst.ENGINECAPACITY, "200");
+        contentValues.put(RentConst.CarModelConst.COLOR, "white");
+        contentValues.put(RentConst.CarModelConst.COMPANYNAME, "toyota");
+        contentValues.put(RentConst.CarModelConst.GEARBOX, "AUTO");
+        contentValues.put(RentConst.CarModelConst.MODELCODE, "223344");
+        contentValues.put(RentConst.CarModelConst.MODELNAME, "modeltoyota");
+        DBManagerFactory.getManager().addCarModel(contentValues);
+
         contentValues.put(RentConst.CustomerConst.CREDITCARD, "credit123");
         contentValues.put(RentConst.CustomerConst.EMAIL, "someone@");
         contentValues.put(RentConst.CustomerConst.FIRSTNAME, "avraham");
