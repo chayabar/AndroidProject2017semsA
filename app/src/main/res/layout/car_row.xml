@@ -7,35 +7,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
         <TextView
-            android:id="@+id/carNumberTextView"
+            android:id="@+id/carNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
+            android:textSize="30sp"
             android:text="carNumber" />
         <TextView
-            android:id="@+id/modelNameTextView"
+            android:id="@+id/modelName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:textSize="30sp"
             android:text="modelName" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/houseBranchTextView"
+            android:id="@+id/houseBranch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
+            android:textSize="30sp"
             android:text="houseBranch" />
 
         <TextView
-            android:id="@+id/mileAgeTextView"
+            android:id="@+id/mileAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:textSize="30sp"
             android:text="mileAge" />
 
     </LinearLayout>

@@ -44,7 +44,6 @@ public class RentConst {
 
     public static class CustomerConst {
         public static final String ID = "_ID";
-        public static final String CUSTOMERID = "customerID";
         public static final String LASTNAME = "lastName";
         public static final String FIRSTNAME = "firstName";
         public static final String PHONENUMBER = "phoneNumber";
@@ -111,7 +110,7 @@ public class RentConst {
         contentValues.put(CarModelConst.COLOR, carModel.getColor());
         contentValues.put(CarModelConst.YEARMANUFACTURE, String.valueOf(carModel.getYearManufacture()));
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+        DateFormat dateFormat = new SimpleDateFormat("yyyy"); // like MySQL Format
         String dateString = dateFormat.format(carModel.getYearManufacture());
         contentValues.put(CarModelConst.YEARMANUFACTURE, dateString);
 
@@ -128,7 +127,7 @@ public class RentConst {
         carModel.setSeats(contentValues.getAsInteger(CarModelConst.SEATS));
         carModel.setColor(contentValues.getAsString(CarModelConst.COLOR));
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+        DateFormat dateFormat = new  SimpleDateFormat("yyyy"); // like MySQL Format
         String dateString = contentValues.getAsString(CarModelConst.YEARMANUFACTURE);
         try {
             carModel.setYearManufacture(dateFormat.parse(dateString));
@@ -141,7 +140,6 @@ public class RentConst {
 
     public static ContentValues CustomerToContentValues(Customer customer) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(CustomerConst.CUSTOMERID, customer.getCustomerID());
         contentValues.put(CustomerConst.LASTNAME, customer.getLastName());
         contentValues.put(CustomerConst.FIRSTNAME, customer.getFirstName());
         contentValues.put(CustomerConst.ID, customer.getID());
@@ -154,7 +152,6 @@ public class RentConst {
 
     public static Customer ContentValuesToCustomer(ContentValues contentValues) {
         Customer customer = new Customer();
-        customer.setCustomerID(contentValues.getAsInteger(CustomerConst.CUSTOMERID));
         customer.setLastName(contentValues.getAsString(CustomerConst.LASTNAME));
         customer.setFirstName(contentValues.getAsString(CustomerConst.FIRSTNAME));
         customer.setID(contentValues.getAsInteger(CustomerConst.ID));

@@ -2,6 +2,7 @@ package com.example.owner.android5778_3965_2493_00.controller;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
@@ -36,7 +38,7 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
 
         private void findViews() {
             AddButton = (Button)findViewById( R.id.AddButton );
-            ModelNameEditText = (EditText)findViewById( R.id.ModelNameEditText );
+            ModelCodeEditText = (EditText)findViewById( R.id.ModelCodeEditText );
             CompanyNameEditText = (EditText)findViewById( R.id.CompanyNameEditText );
             ModelNameEditText = (EditText)findViewById( R.id.ModelNameEditText );
             EngineCapacityEditText = (EditText)findViewById( R.id.EngineCapacityEditText );
@@ -69,7 +71,19 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             contentValues.put(RentConst.CarModelConst.MODELCODE, this.ModelCodeEditText.getText().toString());
             contentValues.put(RentConst.CarModelConst.MODELNAME, this.ModelNameEditText.getText().toString());
 
-            DBManagerFactory.getManager().addCarModel(contentValues);
+            //DBManagerFactory.getManager().addCarModel(contentValues);
+            new AsyncTask<Void, Void, Boolean>() {
+                @Override
+                protected void onPostExecute(Boolean idResult) {
+                    super.onPostExecute(idResult);
+                    if (idResult == true)
+                        Toast.makeText(getBaseContext(), "the car model inserted: " + idResult, Toast.LENGTH_LONG).show();
+                }
+                @Override
+                protected Boolean doInBackground(Void... params) {
+                    return DBManagerFactory.getManager().addCarModel(contentValues);
+                }
+            }.execute();
         }
         catch (Exception e) {}
     }

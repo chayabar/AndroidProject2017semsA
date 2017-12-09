@@ -2,10 +2,12 @@ package com.example.owner.android5778_3965_2493_00.controller;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
@@ -57,7 +59,19 @@ public class addCarActivity extends Activity implements View.OnClickListener {
             contentValues.put(RentConst.CarConst.HOUSEBRANCH, Integer.valueOf(this.HouseBranchEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.MILEAGE, Float.valueOf(this.MileAgeEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.MODELNAME, this.ModelNameEditText.getText().toString());
-            DBManagerFactory.getManager().addCar(contentValues);
+            //DBManagerFactory.getManager().addCar(contentValues);
+            new AsyncTask<Void, Void, Boolean>() {
+                @Override
+                protected void onPostExecute(Boolean idResult) {
+                    super.onPostExecute(idResult);
+                    if (idResult == true)
+                        Toast.makeText(getBaseContext(), "the car inserted: " + idResult, Toast.LENGTH_LONG).show();
+                }
+                @Override
+                protected Boolean doInBackground(Void... params) {
+                    return DBManagerFactory.getManager().addCar(contentValues);
+                }
+            }.execute();
         }
         catch (Exception e) {}
     }

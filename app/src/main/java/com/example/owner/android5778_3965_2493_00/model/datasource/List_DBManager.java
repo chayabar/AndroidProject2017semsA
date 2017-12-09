@@ -35,13 +35,15 @@ public class List_DBManager implements DB_manager {
         cars = new ArrayList<>();
         carModels = new ArrayList<>();
         branchs = new ArrayList<>();
+
     }
+
 
     @Override
     public boolean existCustomer(ContentValues newcustomer) {
         Customer customer = ContentValuesToCustomer(newcustomer);
         for (Customer item : customers)
-            if (item.getCustomerID() == customer.getCustomerID()) {
+            if (item.getID() == customer.getID()) {
                 return true;
             }
         return false;    }
@@ -124,7 +126,7 @@ public class List_DBManager implements DB_manager {
     public boolean removeCustomer(long id) {
         Customer customerToRemove = null;
         for (Customer item : customers)
-            if (item.getCustomerID() == id) {
+            if (item.getID() == id) {
                 customerToRemove = item;
                 break;
             }
@@ -181,9 +183,9 @@ public class List_DBManager implements DB_manager {
     @Override
     public boolean updateCustomer(int id,ContentValues values) {
         Customer customer = ContentValuesToCustomer(values);
-        customer.setCustomerID(id);
+        customer.setID(id);
         for (int i = 0; i < customers.size(); i++)
-            if (customers.get(i).getCustomerID() == id) {
+            if (customers.get(i).getID() == id) {
                 customers.set(i, customer);
                 return true;
             }

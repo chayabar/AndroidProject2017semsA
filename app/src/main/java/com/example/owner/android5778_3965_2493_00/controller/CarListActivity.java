@@ -1,10 +1,7 @@
 package com.example.owner.android5778_3965_2493_00.controller;
 
 import android.app.Activity;
-import android.content.ClipData;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -13,7 +10,6 @@ import android.widget.TextView;
 
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
-import com.example.owner.android5778_3965_2493_00.model.datasource.List_DBManager;
 import com.example.owner.android5778_3965_2493_00.model.entities.Car;
 
 import java.util.List;
@@ -24,28 +20,30 @@ public class CarListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_list);
+        initItemByListView();
     }
 
     void initItemByListView() {
         final List<Car> myList = DBManagerFactory.getManager().getCars();
         ListView listView = new ListView(this);
         //array adaptor is for Car (the class) in the example "item" is for item class they have...
-        ArrayAdapter<Car> adapter = new ArrayAdapter<Car>(this, R.layout.row_car, myList) {
+        ArrayAdapter<Car> adapter = new ArrayAdapter<Car>(this, R.layout.car_row, myList) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 if (convertView == null)
                 {
                     //the first argument is the window we are in : "CarListActivity.this"
-                    convertView = View.inflate(CarListActivity.this ,R.layout.row_car, null);
+                    convertView = View.inflate(CarListActivity.this ,R.layout.car_row, null);
                 }
-                TextView productHouseBranchTextView = (TextView) convertView.findViewById(R.id.HouseBranchEditText);
-                TextView productModelNameTextView = (TextView) convertView.findViewById(R.id.ModelNameEditText);
-                TextView productionMileAgeTextView = (TextView) convertView.findViewById(R.id.MileAgeEditText);
-                TextView productionCarNumberTextView = (TextView) convertView.findViewById(R.id.CarNumberEditText);
+                TextView productionCarNumberTextView = (TextView) convertView.findViewById(R.id.carNumber);
+                TextView productModelNameTextView = (TextView) convertView.findViewById(R.id.modelName);
+                TextView productHouseBranchTextView = (TextView) convertView.findViewById(R.id.houseBranch);
+                TextView productionMileAgeTextView = (TextView) convertView.findViewById(R.id.mileAge);
+
+                productionCarNumberTextView.setText(myList.get(position).getCarNumber());
+                productModelNameTextView.setText((myList.get(position).getModelName()));
                 productHouseBranchTextView.setText(((Integer) myList.get(position).getHouseBranch()).toString());
-                productModelNameTextView.setText(myList.get(position).getModelName());
                 productionMileAgeTextView.setText(((Float) myList.get(position).getMileAge()).toString());
-                productionCarNumberTextView.setText(myList.get(position).getModelName());
                 return convertView;
                 // return super.getView(position, convertView, parent);
             }

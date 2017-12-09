@@ -5,21 +5,12 @@ package com.example.owner.android5778_3965_2493_00.model.entities;
  */
 
 public class Customer {
-    int customerID;
     String lastName;
     String firstName;
     int ID;
     String phoneNumber;
     String eMail;
     String creditCard;
-
-    public int getCustomerID() {
-        return customerID;
-    }
-
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
-    }
 
     public String getLastName() {
         return lastName;
@@ -72,8 +63,7 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{" +
-                "customerID=" + customerID +
-                ", lastName='" + lastName + '\'' +
+                " lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", ID=" + ID +
                 ", phoneNumber='" + phoneNumber + '\'' +

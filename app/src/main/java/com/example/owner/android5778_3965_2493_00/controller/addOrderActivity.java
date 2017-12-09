@@ -2,6 +2,7 @@ package com.example.owner.android5778_3965_2493_00.controller;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
@@ -86,7 +88,20 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
             contentValues.put(RentConst.OrderConst.CHARGE, charge);
             int customerId = Integer.valueOf(this.CustomerIdEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.CUSTUMERID, customerId);
-            DBManagerFactory.getManager().addOrder(contentValues);
+
+            //DBManagerFactory.getManager().addOrder(contentValues);
+            new AsyncTask<Void, Void, Boolean>() {
+                @Override
+                protected void onPostExecute(Boolean idResult) {
+                    super.onPostExecute(idResult);
+                    if (idResult == true)
+                        Toast.makeText(getBaseContext(), "the order inserted: " + idResult, Toast.LENGTH_LONG).show();
+                }
+                @Override
+                protected Boolean doInBackground(Void... params) {
+                    return DBManagerFactory.getManager().addOrder(contentValues);
+                }
+            }.execute();
         }
         catch (Exception e) {}
     }
