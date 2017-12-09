@@ -26,9 +26,11 @@
         <activity android:name=".controller.addOrderActivity" />
         <activity android:name=".controller.addCarActivity" />
         <activity android:name=".controller.addCustomerActivity" />
+        <activity android:name=".controller.CustomerListActivity" />
         <activity android:name=".controller.addCarModelActivity" />
         <activity android:name=".controller.BranchListActivity" />
         <activity android:name=".controller.CarListActivity" />
+        <activity android:name=".controller.CarModelListActivity" />
         <activity android:name=".controller.OrderListActivity"></activity>
     </application>
 

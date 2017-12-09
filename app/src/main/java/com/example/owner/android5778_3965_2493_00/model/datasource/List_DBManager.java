@@ -35,6 +35,7 @@ public class List_DBManager implements DB_manager {
         cars = new ArrayList<>();
         carModels = new ArrayList<>();
         branchs = new ArrayList<>();
+        orders = new ArrayList<>();
 
     }
 

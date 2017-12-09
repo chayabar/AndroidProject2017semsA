@@ -54,17 +54,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         contentValues.put(RentConst.OrderConst.ORDERID, "98765");
         contentValues.put(RentConst.OrderConst.CARNUMBER, "carNum78");
-        contentValues.put(RentConst.OrderConst.STARTRENT, "12/10/2017");
-        contentValues.put(RentConst.OrderConst.ENDRENT, "13/10/2017");
+        contentValues.put(RentConst.OrderConst.STARTRENT, "2017");
+        contentValues.put(RentConst.OrderConst.ENDRENT, "2017");
         contentValues.put(RentConst.OrderConst.STARTMILEAGE, "12.5");
         contentValues.put(RentConst.OrderConst.ENDMILEAGE, "10.5");
         contentValues.put(RentConst.OrderConst.FUELFILLING, "TRUE");
         contentValues.put(RentConst.OrderConst.ORDERSTATUS, "CLOSE");
         contentValues.put(RentConst.OrderConst.FUELLITTER, "52.1");
-        contentValues.put(RentConst.OrderConst.CHARGE, "100.5");
+        contentValues.put(RentConst.OrderConst.CHARGE, "100");
         contentValues.put(RentConst.OrderConst.CUSTUMERID, "308475684");
-        //DBManagerFactory.getManager().addOrder(contentValues);
-
+        DBManagerFactory.getManager().addOrder(contentValues);
 
     }
 

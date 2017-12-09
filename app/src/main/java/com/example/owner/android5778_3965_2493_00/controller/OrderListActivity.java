@@ -52,7 +52,8 @@ public class OrderListActivity extends Activity {
                 String start = df.format(myList.get(position).getStartRent());
                 productstartRentTextView.setText(start);
 
-                String end = df.format(myList.get(position).getEndRent());
+                SimpleDateFormat df1 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                String end = df1.format(myList.get(position).getEndRent());
                 productendRentTextView.setText(end);
 
                 productchargeTextView.setText(((Float) myList.get(position).getCharge()).toString());
