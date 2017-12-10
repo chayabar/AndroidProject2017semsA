@@ -32,7 +32,7 @@ public class CustomerListActivity extends Activity {
             public View getView(int position, View convertView, ViewGroup parent) {
                 if (convertView == null)
                 {
-                    //the first argument is the window we are in : "CustomerListActivity.this"
+                    // the first argument is the window we are in : "CustomerListActivity.this"
                     convertView = View.inflate(CustomerListActivity.this ,R.layout.customer_row, null);
                 }
 
