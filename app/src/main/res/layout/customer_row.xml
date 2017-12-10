@@ -7,12 +7,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="1">
+
         <TextView
-            android:id="@+id/itemId"
-            android:textSize="30sp"
-            android:hint="item id"
+            android:id="@+id/firstName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="item id"
+            android:text="FirstName"
+            android:textSize="30sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:textSize="30sp"
@@ -20,10 +23,11 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/itemName"
+            android:id="@+id/LastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="item name"
+            android:text="LastName"
             android:textSize="30sp" />
     </LinearLayout>
 
@@ -31,12 +35,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="1">
+
         <TextView
-            android:id="@+id/field1"
-            android:textSize="30sp"
-            android:hint="field1"
+            android:id="@+id/ID"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="field1"
+            android:text="ID"
+            android:textSize="30sp" />
         <TextView
             android:layout_width="wrap_content"
             android:textSize="30sp"
@@ -44,10 +50,11 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/field2"
+            android:id="@+id/PhoneNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="field2"
+            android:text="PhoneNum"
             android:textSize="30sp" />
     </LinearLayout>
 
