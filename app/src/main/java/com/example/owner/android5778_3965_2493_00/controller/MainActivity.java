@@ -12,6 +12,9 @@ import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
 import com.example.owner.android5778_3965_2493_00.model.entities.Customer;
+import com.example.owner.android5778_3965_2493_00.model.entities.Order;
+
+import java.util.List;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -54,8 +57,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         contentValues.put(RentConst.OrderConst.ORDERID, "98765");
         contentValues.put(RentConst.OrderConst.CARNUMBER, "carNum78");
-        contentValues.put(RentConst.OrderConst.STARTRENT, "2017");
-        contentValues.put(RentConst.OrderConst.ENDRENT, "2017");
+        contentValues.put(RentConst.OrderConst.STARTRENT, "2017-10-10 10:10:10");
+        contentValues.put(RentConst.OrderConst.ENDRENT, "2017-10-12 10:00:00");
         contentValues.put(RentConst.OrderConst.STARTMILEAGE, "12.5");
         contentValues.put(RentConst.OrderConst.ENDMILEAGE, "10.5");
         contentValues.put(RentConst.OrderConst.FUELFILLING, "TRUE");
@@ -64,6 +67,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         contentValues.put(RentConst.OrderConst.CHARGE, "100");
         contentValues.put(RentConst.OrderConst.CUSTUMERID, "308475684");
         DBManagerFactory.getManager().addOrder(contentValues);
+        final List<Order> myList = DBManagerFactory.getManager().getOrders();
 
     }
 

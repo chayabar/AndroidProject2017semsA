@@ -35,30 +35,6 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="carNumber" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/startRent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="startRent" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:textSize="20sp"
-            android:text=" - "
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/endRent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="endRent" />
         <TextView
             android:layout_width="wrap_content"
             android:textSize="20sp"
@@ -70,6 +46,50 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="charge" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text=" [ "
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/startRent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="startRent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text=" ] "
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text=" - "
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text=" [ "
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/endRent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="endRent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text=" ] "
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </LinearLayout>

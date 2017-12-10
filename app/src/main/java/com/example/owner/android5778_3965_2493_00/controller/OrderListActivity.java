@@ -46,7 +46,7 @@ public class OrderListActivity extends Activity {
 
                 productorderIDTextView.setText(((Integer) myList.get(position).getOrderID()).toString());
                 productcustomerIDTextView.setText(((Integer) myList.get(position).getCustomerID()).toString());
-                productcarNumberTextView.setText(myList.get(position).getCarNumber());
+                productcarNumberTextView.setText((myList.get(position).getCarNumber()).toString());
 
                 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
                 String start = df.format(myList.get(position).getStartRent());
