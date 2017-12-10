@@ -37,10 +37,10 @@ public class CustomerListActivity extends Activity {
                 }
 
 
-                TextView productFirstNameTextView = (TextView) convertView.findViewById(R.id.firstNameeditText);
-                TextView productLastNameTextView = (TextView) convertView.findViewById(R.id.LastNameEditText);
-                TextView productIDTextView = (TextView) convertView.findViewById(R.id.IDEditText);
-                TextView productPhoneNumTextView = (TextView) convertView.findViewById(R.id.PhoneNumEditText);
+                TextView productFirstNameTextView = (TextView) convertView.findViewById(R.id.firstName);
+                TextView productLastNameTextView = (TextView) convertView.findViewById(R.id.LastName);
+                TextView productIDTextView = (TextView) convertView.findViewById(R.id.ID);
+                TextView productPhoneNumTextView = (TextView) convertView.findViewById(R.id.PhoneNum);
                 productFirstNameTextView.setText(myList.get(position).getFirstName());
                 productLastNameTextView.setText(myList.get(position).getLastName());
                 productIDTextView.setText(((Integer)myList.get(position).getID()).toString());
