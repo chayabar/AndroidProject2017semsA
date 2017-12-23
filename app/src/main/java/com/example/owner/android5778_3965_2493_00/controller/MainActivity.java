@@ -24,7 +24,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         findViews();
 
-        final ContentValues contentValues = new ContentValues();
+        /*final ContentValues contentValues = new ContentValues();
 
         contentValues.put(RentConst.BranchConst.BRANCHNUMBER, "100");
         contentValues.put(RentConst.BranchConst.PARKINGSPACES, "3");
@@ -67,7 +67,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         contentValues.put(RentConst.OrderConst.CHARGE, "100");
         contentValues.put(RentConst.OrderConst.CUSTUMERID, "308475684");
         DBManagerFactory.getManager().addOrder(contentValues);
-        final List<Order> myList = DBManagerFactory.getManager().getOrders();
+        final List<Order> myList = DBManagerFactory.getManager().getOrders();*/
 
     }
 
