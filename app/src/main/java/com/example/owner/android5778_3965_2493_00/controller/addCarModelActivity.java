@@ -56,6 +56,7 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             if ( v == AddButton ) {
                 // Handle clicks for AddButton
                 addCarModel();
+                finish();
             }
         }
 
@@ -71,7 +72,6 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             contentValues.put(RentConst.CarModelConst.MODELCODE, this.ModelCodeEditText.getText().toString());
             contentValues.put(RentConst.CarModelConst.MODELNAME, this.ModelNameEditText.getText().toString());
 
-            //DBManagerFactory.getManager().addCarModel(contentValues);
             new AsyncTask<Void, Void, Boolean>() {
                 @Override
                 protected void onPostExecute(Boolean idResult) {

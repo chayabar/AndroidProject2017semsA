@@ -40,7 +40,7 @@ public class List_DBManager implements DB_manager {
     }
 
 
-    @Override
+    /*@Override
     public boolean existCustomer(ContentValues newcustomer) {
         Customer customer = ContentValuesToCustomer(newcustomer);
         for (Customer item : customers)
@@ -86,7 +86,8 @@ public class List_DBManager implements DB_manager {
             if (item.getOrderID() == order.getOrderID()) {
                 return true;
             }
-        return false;    }
+        return false;
+    }*/
 
     @Override
     public boolean addCustomer(ContentValues newCustomer) {
@@ -123,7 +124,7 @@ public class List_DBManager implements DB_manager {
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean removeCustomer(long id) {
         Customer customerToRemove = null;
         for (Customer item : customers)
@@ -239,7 +240,7 @@ public class List_DBManager implements DB_manager {
                 return true;
             }
         return false;
-    }
+    }*/
 
     @Override
     public List<Customer> getCustomers() {

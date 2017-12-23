@@ -71,6 +71,7 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
         if ( v == addButton ) {
             // Handle clicks for AddButton
             addOrder();
+            finish();
         }
     }
     private void addOrder() {
@@ -79,9 +80,6 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
             int orderId = Integer.valueOf(this.OrderIdEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.ORDERID, orderId);
             contentValues.put(RentConst.OrderConst.CARNUMBER, this.CarNumberEditText.getText().toString());
-//            Date startRent = StartRentEditText.getText().toString();
-//            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
-//            String dateString = dateFormat.format(startRent);
             contentValues.put(RentConst.OrderConst.STARTRENT, this.StartRentEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.ENDRENT, this.EndRentEditText.getText().toString());
             float startMileAge = Float.valueOf(this.StartMileAgeEditText.getText().toString());
@@ -97,8 +95,6 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
             int customerId = Integer.valueOf(this.CustomerIdEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.CUSTUMERID, customerId);
 
-
-            //DBManagerFactory.getManager().addOrder(contentValues);
             new AsyncTask<Void, Void, Boolean>() {
                 @Override
                 protected void onPostExecute(Boolean idResult) {

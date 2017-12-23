@@ -21,7 +21,7 @@ public interface DB_manager {
     boolean addBranch(ContentValues newBranch);
     boolean addOrder(ContentValues newOrder);
 
-    boolean removeCustomer(long id);
+   /* boolean removeCustomer(long id);
     boolean removeCarModel(String id);
     boolean removeCar(String id);
     boolean removeBranch(long id);
@@ -38,7 +38,7 @@ public interface DB_manager {
     boolean existcarModel(ContentValues carModel);
     boolean existcar(ContentValues car);
     boolean existbranch(ContentValues branch);
-    boolean existorder(ContentValues order);
+    boolean existorder(ContentValues order);*/
 
 
 

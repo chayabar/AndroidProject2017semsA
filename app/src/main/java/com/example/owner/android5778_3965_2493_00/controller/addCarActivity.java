@@ -49,6 +49,7 @@ public class addCarActivity extends Activity implements View.OnClickListener {
         if ( v == AddButton ) {
             // Handle clicks for AddButton
             addCar();
+            finish();
         }
     }
 
@@ -59,7 +60,6 @@ public class addCarActivity extends Activity implements View.OnClickListener {
             contentValues.put(RentConst.CarConst.HOUSEBRANCH, Integer.valueOf(this.HouseBranchEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.MILEAGE, Float.valueOf(this.MileAgeEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.MODELNAME, this.ModelNameEditText.getText().toString());
-            //DBManagerFactory.getManager().addCar(contentValues);
             new AsyncTask<Void, Void, Boolean>() {
                 @Override
                 protected void onPostExecute(Boolean idResult) {

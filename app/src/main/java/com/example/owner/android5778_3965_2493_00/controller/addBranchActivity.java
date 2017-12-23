@@ -43,6 +43,7 @@ public class addBranchActivity extends Activity implements View.OnClickListener 
         if ( v == AddButton ) {
             // Handle clicks for AddButton
             addBranch();
+            finish();
         }
     }
 
@@ -52,7 +53,6 @@ public class addBranchActivity extends Activity implements View.OnClickListener 
             contentValues.put(RentConst.BranchConst.BRANCHNUMBER, Integer.valueOf(this.BranchNumberEditText.getText().toString()));
             contentValues.put(RentConst.BranchConst.PARKINGSPACES, Integer.valueOf(this.parkingSpacesEditText.getText().toString()));
             contentValues.put(RentConst.BranchConst.ADDRESS, this.AddressEditText.getText().toString());
-            //DBManagerFactory.getManager().addBranch(contentValues);
 
             new AsyncTask<Void, Void, Boolean>() {
                 @Override

@@ -46,6 +46,7 @@ public class addCustomerActivity extends Activity implements View.OnClickListene
         if ( v == AddButton ) {
             // Handle clicks for AddButton
             addCustomer();
+            finish();
         }
     }
     private void addCustomer() {
@@ -58,7 +59,6 @@ public class addCustomerActivity extends Activity implements View.OnClickListene
             contentValues.put(RentConst.CustomerConst.LASTNAME, this.LastNameEditText.getText().toString());
             contentValues.put(RentConst.CustomerConst.PHONENUMBER, this.PhoneNumEditText.getText().toString());
 
-            //DBManagerFactory.getManager().addCustomer(contentValues);
             new AsyncTask<Void, Void, Boolean>() {
                 @Override
                 protected void onPostExecute(Boolean idResult) {

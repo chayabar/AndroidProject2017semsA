@@ -27,33 +27,28 @@ public class BranchListActivity extends Activity {
         initItemByListView();
     }
 
-
-
-        void initItemByListView() {
-            final List<Branch> myList = DBManagerFactory.getManager().getBranchs();
-            ListView listView = new ListView(this);
-            //array adaptor is for Branch (the class) in the example "item" is for item class they have...
-            ArrayAdapter<Branch> adapter = new ArrayAdapter<Branch>(this, R.layout.branch_row, myList) {
-                @Override
-                public View getView(int position, View convertView, ViewGroup parent) {
-                    if (convertView == null)
-                    {
-                        //the first argument is the window we are in : "BranchListActivity.this"
-                        convertView = View.inflate(BranchListActivity.this ,R.layout.branch_row, null);
-                    }
-
-                    TextView productBranchNumberTextView = (TextView) convertView.findViewById(R.id.branchNumber);
-                    TextView productParkingSpacesTextView = (TextView) convertView.findViewById(R.id.pakingSpaces);
-                    TextView productAddressTextView = (TextView) convertView.findViewById(R.id.address);
-                    productBranchNumberTextView.setText(((Integer)myList.get(position).getBranchNumber()).toString());
-                    productParkingSpacesTextView.setText(((Integer) myList.get(position).getParkingSpaces()).toString());
-                    productAddressTextView.setText(myList.get(position).getAddress());
-                    return convertView;
-                    // return super.getView(position, convertView, parent) ;
+    void initItemByListView() {
+        final List<Branch> myList = DBManagerFactory.getManager().getBranchs();
+        ListView listView = new ListView(this);
+        ArrayAdapter<Branch> adapter = new ArrayAdapter<Branch>(this, R.layout.branch_row, myList) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                if (convertView == null)
+                {
+                    convertView = View.inflate(BranchListActivity.this ,R.layout.branch_row, null);
                 }
-            };
-            listView.setAdapter(adapter);
 
-            this.setContentView(listView);
-        }
+                TextView productBranchNumberTextView = (TextView) convertView.findViewById(R.id.branchNumber);
+                TextView productParkingSpacesTextView = (TextView) convertView.findViewById(R.id.pakingSpaces);
+                TextView productAddressTextView = (TextView) convertView.findViewById(R.id.address);
+                productBranchNumberTextView.setText(((Integer)myList.get(position).getBranchNumber()).toString());
+                productParkingSpacesTextView.setText(((Integer) myList.get(position).getParkingSpaces()).toString());
+                productAddressTextView.setText(myList.get(position).getAddress());
+                return convertView;
+            }
+        };
+        listView.setAdapter(adapter);
+
+        this.setContentView(listView);
     }
+}
