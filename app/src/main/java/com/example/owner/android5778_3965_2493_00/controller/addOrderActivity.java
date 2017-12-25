@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.owner.android5778_3965_2493_00.R;
@@ -35,8 +36,10 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
 
     private EditText OrderIdEditText;
     private EditText CarNumberEditText;
-    private EditText StartRentEditText;
-    private EditText EndRentEditText;
+    private TextView StartRentTextView;
+    private CustomDatePicker CustomDatePiker;
+    private TextView EndRentTextView;
+    private CustomDatePicker CustomDatePiker2;
     private EditText StartMileAgeEditText;
     private EditText EndMileAgeEditText;
     private CheckBox FuelFillingCheckBox;
@@ -50,8 +53,10 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
     private void findViews() {
         OrderIdEditText = (EditText)findViewById( R.id.OrderIdEditText );
         CarNumberEditText = (EditText)findViewById( R.id.CarNumberEditText );
-        StartRentEditText = (EditText)findViewById( R.id.StartRentEditText );
-        EndRentEditText = (EditText)findViewById( R.id.EndRentEditText );
+        StartRentTextView = (TextView)findViewById( R.id.startRentTextView );
+        CustomDatePiker=(CustomDatePicker) findViewById( R.id.CustomDatePiker);
+        EndRentTextView = (TextView)findViewById( R.id.endRentTextView );
+        CustomDatePiker2=(CustomDatePicker) findViewById( R.id.CustomDatePiker2);
         StartMileAgeEditText = (EditText)findViewById( R.id.StartMileAgeEditText );
         EndMileAgeEditText = (EditText)findViewById( R.id.EndMileAgeEditText );
         FuelFillingCheckBox = (CheckBox)findViewById( R.id.FuelFillingCheckBox );
@@ -80,8 +85,13 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
             int orderId = Integer.valueOf(this.OrderIdEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.ORDERID, orderId);
             contentValues.put(RentConst.OrderConst.CARNUMBER, this.CarNumberEditText.getText().toString());
-            contentValues.put(RentConst.OrderConst.STARTRENT, this.StartRentEditText.getText().toString());
-            contentValues.put(RentConst.OrderConst.ENDRENT, this.EndRentEditText.getText().toString());
+            Date startDate = CustomDatePiker.getDate();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
+            String dateString = dateFormat.format(startDate);
+            contentValues.put(RentConst.OrderConst.STARTRENT, dateString);
+            Date endDate = CustomDatePiker2.getDate();
+            String endDateString = dateFormat.format(endDate);
+            contentValues.put(RentConst.OrderConst.ENDRENT, endDateString);
             float startMileAge = Float.valueOf(this.StartMileAgeEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.STARTMILEAGE, startMileAge);
             float endMileAge = Float.valueOf(this.EndMileAgeEditText.getText().toString());

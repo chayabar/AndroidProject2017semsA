@@ -79,6 +79,7 @@
                 android:text="End rent:" />
 
             <view
+                android:id="@+id/CustomDatePiker2"
                 class="com.example.owner.android5778_3965_2493_00.controller.CustomDatePicker"
                 id="@+id/view4"
                 layout_width="match_parent"
