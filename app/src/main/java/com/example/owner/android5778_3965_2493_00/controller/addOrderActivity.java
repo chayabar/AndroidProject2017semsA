@@ -121,5 +121,3 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
         catch (Exception e) {}
     }
 }
-
-
