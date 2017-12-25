@@ -95,7 +95,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         if (v == LoginButton) {
             // Handle clicks for LoginButton
-            Intent intent = new Intent(this, MenuActivity.class);
+            Intent intent = new Intent(this, smallMenuActivity.class);
             startActivity(intent);
         }
     }

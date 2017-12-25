@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     package="com.example.owner.android5778_3965_2493_00">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -33,7 +33,8 @@
         <activity android:name=".controller.BranchListActivity" />
         <activity android:name=".controller.CarListActivity" />
         <activity android:name=".controller.CarModelListActivity" />
-        <activity android:name=".controller.OrderListActivity"></activity>
+        <activity android:name=".controller.OrderListActivity" />
+        <activity android:name=".controller.smallMenuActivity"></activity>
     </application>
 
 </manifest>
