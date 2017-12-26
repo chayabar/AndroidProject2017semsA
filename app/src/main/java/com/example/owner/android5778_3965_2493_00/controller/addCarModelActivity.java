@@ -17,6 +17,10 @@ import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
 import com.example.owner.android5778_3965_2493_00.model.entities.Enums;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+
 public class addCarModelActivity extends Activity implements View.OnClickListener {
 
         private Button AddButton;
@@ -24,7 +28,7 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
         private EditText CompanyNameEditText;
         private EditText ModelNameEditText;
         private EditText EngineCapacityEditText;
-        private EditText SeatsEditText;
+        private Spinner SeatsSpinner;
         private EditText ColorEditText;
         private EditText YearsManufactureEditText;
         private Spinner GearBoxSpinner;
@@ -42,7 +46,12 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             CompanyNameEditText = (EditText)findViewById( R.id.CompanyNameEditText );
             ModelNameEditText = (EditText)findViewById( R.id.ModelNameEditText );
             EngineCapacityEditText = (EditText)findViewById( R.id.EngineCapacityEditText );
-            SeatsEditText = (EditText)findViewById( R.id.SeatsEditText );
+
+            SeatsSpinner = (Spinner)findViewById( R.id.SeatsSpinner );
+            SeatsSpinner.setAdapter(new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, new Integer[]{2,5,7, 10}));
+
+
+
             ColorEditText = (EditText)findViewById( R.id.ColorEditText );
             YearsManufactureEditText = (EditText)findViewById( R.id.YearsManufactureEditText );
             GearBoxSpinner = (Spinner)findViewById( R.id.GearBoxSpinner );
@@ -64,7 +73,7 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
         final ContentValues contentValues = new ContentValues();
         try {
             contentValues.put(RentConst.CarModelConst.YEARMANUFACTURE, this.YearsManufactureEditText.getText().toString());
-            contentValues.put(RentConst.CarModelConst.SEATS, Integer.valueOf(this.SeatsEditText.getText().toString()));
+            contentValues.put(RentConst.CarModelConst.SEATS, Integer.valueOf(this.SeatsSpinner.getSelectedItem().toString()));
             contentValues.put(RentConst.CarModelConst.ENGINECAPACITY, Float.valueOf(this.EngineCapacityEditText.getText().toString()));
             contentValues.put(RentConst.CarModelConst.COLOR, this.ColorEditText.getText().toString());
             contentValues.put(RentConst.CarModelConst.COMPANYNAME, this.CompanyNameEditText.getText().toString());
