@@ -69,7 +69,7 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             contentValues.put(RentConst.CarModelConst.COLOR, this.ColorEditText.getText().toString());
             contentValues.put(RentConst.CarModelConst.COMPANYNAME, this.CompanyNameEditText.getText().toString());
             contentValues.put(RentConst.CarModelConst.GEARBOX, this.GearBoxSpinner.getSelectedItem().toString());
-            contentValues.put(RentConst.CarModelConst.MODELCODE, this.ModelCodeEditText.getText().toString());
+            contentValues.put(RentConst.CarModelConst.MODELCODE, Integer.valueOf(this.ModelCodeEditText.getText().toString()));
             contentValues.put(RentConst.CarModelConst.MODELNAME, this.ModelNameEditText.getText().toString());
 
             new AsyncTask<Void, Void, Boolean>() {

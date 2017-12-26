@@ -92,7 +92,7 @@ public class RentConst {
 
     public static Car ContentValuesToCar(ContentValues contentValues) {
         Car car = new Car();
-        car.setCarNumber(contentValues.getAsString(CarConst.CARNUMBER));
+        car.setCarNumber(contentValues.getAsInteger(CarConst.CARNUMBER));
         car.setHouseBranch(contentValues.getAsInteger(CarConst.HOUSEBRANCH));
         car.setModelName(contentValues.getAsString(CarConst.MODELNAME));
         car.setMileAge(contentValues.getAsFloat(CarConst.MILEAGE));
@@ -119,7 +119,7 @@ public class RentConst {
 
     public static CarModel ContentValuesToCarModel(ContentValues contentValues) {
         CarModel carModel = new CarModel();
-        carModel.setModelCode(contentValues.getAsString(CarModelConst.MODELCODE));
+        carModel.setModelCode(contentValues.getAsInteger(CarModelConst.MODELCODE));
         carModel.setCompanyName(contentValues.getAsString(CarModelConst.COMPANYNAME));
         carModel.setModelName(contentValues.getAsString(CarModelConst.MODELNAME));
         carModel.setEngineCapacity(contentValues.getAsFloat(CarModelConst.ENGINECAPACITY));

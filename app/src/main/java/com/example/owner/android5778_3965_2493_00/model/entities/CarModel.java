@@ -7,7 +7,7 @@ import java.util.Date;
  */
 
 public class CarModel {
-    String modelCode;
+    int modelCode;
     String companyName;
     String modelName;
     float engineCapacity;
@@ -16,11 +16,11 @@ public class CarModel {
     String color;
     Date yearManufacture;
 
-    public String getModelCode() {
+    public int getModelCode() {
         return modelCode;
     }
 
-    public void setModelCode(String modelCode) {
+    public void setModelCode(int modelCode) {
         this.modelCode = modelCode;
     }
 

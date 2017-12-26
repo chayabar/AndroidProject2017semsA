@@ -8,7 +8,7 @@ public class Car {
     int houseBranch;
     String modelName;
     float mileAge;
-    String carNumber;
+    int carNumber;
 
     public int getHouseBranch() {
         return houseBranch;
@@ -34,11 +34,11 @@ public class Car {
         this.mileAge = mileAge;
     }
 
-    public String getCarNumber() {
+    public int getCarNumber() {
         return carNumber;
     }
 
-    public void setCarNumber(String carNumber) {
+    public void setCarNumber(int carNumber) {
         this.carNumber = carNumber;
     }
 

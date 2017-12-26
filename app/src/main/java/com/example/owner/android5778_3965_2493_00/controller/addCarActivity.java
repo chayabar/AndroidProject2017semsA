@@ -56,7 +56,7 @@ public class addCarActivity extends Activity implements View.OnClickListener {
     private void addCar() {
         final ContentValues contentValues = new ContentValues();
         try {
-            contentValues.put(RentConst.CarConst.CARNUMBER, this.CarNumberEditText.getText().toString());
+            contentValues.put(RentConst.CarConst.CARNUMBER, Integer.valueOf(this.CarNumberEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.HOUSEBRANCH, Integer.valueOf(this.HouseBranchEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.MILEAGE, Float.valueOf(this.MileAgeEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.MODELNAME, this.ModelNameEditText.getText().toString());
