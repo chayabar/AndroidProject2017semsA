@@ -6,7 +6,7 @@ package com.example.owner.android5778_3965_2493_00.model.entities;
 
 public class Car {
     int houseBranch;
-    String modelName;
+    int modelCode;
     float mileAge;
     int carNumber;
 
@@ -18,12 +18,12 @@ public class Car {
         this.houseBranch = houseBranch;
     }
 
-    public String getModelName() {
-        return modelName;
+    public int getModelCode() {
+        return modelCode;
     }
 
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
+    public void setModelCode(int modelCode) {
+        this.modelCode = modelCode;
     }
 
     public float getMileAge() {
@@ -46,7 +46,7 @@ public class Car {
     public String toString() {
         return "Car{" +
                 "houseBranch=" + houseBranch +
-                ", modelName='" + modelName + '\'' +
+                ", modelCode='" + modelCode + '\'' +
                 ", mileAge=" + mileAge +
                 ", carNumber='" + carNumber + '\'' +
                 '}';

@@ -17,7 +17,7 @@ public class addCarActivity extends Activity implements View.OnClickListener {
 
     private Button AddButton;
     private EditText HouseBranchEditText;
-    private EditText ModelNameEditText;
+    private EditText ModelCodeEditText;
     private EditText MileAgeEditText;
     private EditText CarNumberEditText;
 
@@ -31,7 +31,7 @@ public class addCarActivity extends Activity implements View.OnClickListener {
     private void findViews() {
         AddButton = (Button)findViewById( R.id.AddButton );
         HouseBranchEditText = (EditText)findViewById( R.id.HouseBranchEditText );
-        ModelNameEditText = (EditText)findViewById( R.id.ModelNameEditText );
+        ModelCodeEditText = (EditText)findViewById( R.id.ModelCodeEditText );
         MileAgeEditText = (EditText)findViewById( R.id.MileAgeEditText );
         CarNumberEditText = (EditText)findViewById( R.id.CarNumberEditText );
 
@@ -59,7 +59,7 @@ public class addCarActivity extends Activity implements View.OnClickListener {
             contentValues.put(RentConst.CarConst.CARNUMBER, Integer.valueOf(this.CarNumberEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.HOUSEBRANCH, Integer.valueOf(this.HouseBranchEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.MILEAGE, Float.valueOf(this.MileAgeEditText.getText().toString()));
-            contentValues.put(RentConst.CarConst.MODELNAME, this.ModelNameEditText.getText().toString());
+            contentValues.put(RentConst.CarConst.MODELCODE, this.ModelCodeEditText.getText().toString());
             new AsyncTask<Void, Void, Boolean>() {
                 @Override
                 protected void onPostExecute(Boolean idResult) {

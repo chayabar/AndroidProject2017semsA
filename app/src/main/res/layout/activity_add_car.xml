@@ -29,11 +29,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/ModelNameEditText"
+        android:id="@+id/ModelCodeEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="model name"
+        android:hint="model code"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/MileAgeEditText"
         app:layout_constraintLeft_toLeftOf="parent"

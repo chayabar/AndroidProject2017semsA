@@ -9,7 +9,7 @@ import java.util.Date;
 public class Order {
     int customerID;
     Enums.OrderStatus orderStatus;
-    String carNumber;
+    int carNumber;
     Date startRent;
     Date endRent;
     float startMileAge;
@@ -35,11 +35,11 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
-    public String getCarNumber() {
+    public int getCarNumber() {
         return carNumber;
     }
 
-    public void setCarNumber(String carNumber) {
+    public void setCarNumber(int carNumber) {
         this.carNumber = carNumber;
     }
 

@@ -27,7 +27,7 @@ public class RentConst {
     public static class CarConst {
         public static final String CARNUMBER = "_carNumber";
         public static final String HOUSEBRANCH = "houseBranch";
-        public static final String MODELNAME = "modelName";
+        public static final String MODELCODE = "modelCode";
         public static final String MILEAGE = "mileAge";
     }
 
@@ -85,7 +85,7 @@ public class RentConst {
         ContentValues contentValues = new ContentValues();
         contentValues.put(CarConst.CARNUMBER, car.getCarNumber());
         contentValues.put(CarConst.HOUSEBRANCH, car.getHouseBranch());
-        contentValues.put(CarConst.MODELNAME, car.getModelName());
+        contentValues.put(CarConst.MODELCODE, car.getModelCode());
         contentValues.put(CarConst.MILEAGE, car.getMileAge());
         return contentValues;
     }
@@ -94,7 +94,7 @@ public class RentConst {
         Car car = new Car();
         car.setCarNumber(contentValues.getAsInteger(CarConst.CARNUMBER));
         car.setHouseBranch(contentValues.getAsInteger(CarConst.HOUSEBRANCH));
-        car.setModelName(contentValues.getAsString(CarConst.MODELNAME));
+        car.setModelCode(contentValues.getAsInteger(CarConst.MODELCODE));
         car.setMileAge(contentValues.getAsFloat(CarConst.MILEAGE));
         return car;
     }
@@ -188,7 +188,7 @@ public class RentConst {
         Order order = new Order();
         order.setCustomerID(contentValues.getAsInteger(OrderConst.CUSTUMERID));
         order.setOrderStatus(Enums.OrderStatus.valueOf(contentValues.getAsString(OrderConst.ORDERSTATUS)));
-        order.setCarNumber(contentValues.getAsString(OrderConst.CARNUMBER));
+        order.setCarNumber(contentValues.getAsInteger(OrderConst.CARNUMBER));
 
         DateFormat dateFormatStart = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // like MySQL Format
         String DateStartString = contentValues.getAsString(OrderConst.STARTRENT);
