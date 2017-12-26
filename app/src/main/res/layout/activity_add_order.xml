@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Car number"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 app:layout_constraintBottom_toTopOf="@+id/StartRentEditText"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"

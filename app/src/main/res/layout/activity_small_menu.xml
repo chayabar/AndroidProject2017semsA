@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/addCarButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="add car"
         app:layout_constraintBottom_toTopOf="@+id/addCarModelButton"
@@ -18,7 +18,7 @@
 
     <Button
         android:id="@+id/addCarModelButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="add Car Model"
         app:layout_constraintBottom_toTopOf="@+id/addCustomerButton"
@@ -28,7 +28,7 @@
 
     <Button
         android:id="@+id/addCustomerButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="add Customer"
         app:layout_constraintBottom_toTopOf="@+id/addOrderButton"
@@ -38,7 +38,7 @@
 
     <Button
         android:id="@+id/addOrderButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="add Order"
         app:layout_constraintBottom_toTopOf="@+id/branchListButton"
@@ -48,7 +48,7 @@
 
     <Button
         android:id="@+id/branchListButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="branch list"
         app:layout_constraintBottom_toTopOf="@+id/carListButton"
@@ -58,7 +58,7 @@
 
     <Button
         android:id="@+id/carListButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="car List"
         app:layout_constraintBottom_toTopOf="@+id/carModelListButton"
@@ -68,7 +68,7 @@
 
     <Button
         android:id="@+id/carModelListButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="car Model List"
         app:layout_constraintBottom_toTopOf="@+id/customerListButton"
@@ -78,7 +78,7 @@
 
     <Button
         android:id="@+id/customerListButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="customer list"
         app:layout_constraintBottom_toTopOf="@+id/orderListButton"
@@ -88,7 +88,7 @@
 
     <Button
         android:id="@+id/orderListButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="order list"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -98,7 +98,7 @@
 
     <Button
         android:id="@+id/addBranchButton"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="add Branch"
         app:layout_constraintBottom_toTopOf="@+id/addCarButton"

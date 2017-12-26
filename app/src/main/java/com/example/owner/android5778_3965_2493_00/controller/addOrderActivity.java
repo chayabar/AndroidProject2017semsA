@@ -84,7 +84,7 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
         try {
             int orderId = Integer.valueOf(this.OrderIdEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.ORDERID, orderId);
-            contentValues.put(RentConst.OrderConst.CARNUMBER, this.CarNumberEditText.getText().toString());
+            contentValues.put(RentConst.OrderConst.CARNUMBER, Integer.valueOf(this.CarNumberEditText.getText().toString()));
             Date startDate = CustomDatePiker.getDate();
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // like MySQL Format
             String dateString = dateFormat.format(startDate);
