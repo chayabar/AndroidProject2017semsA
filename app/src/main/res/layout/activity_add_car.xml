@@ -18,29 +18,39 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
-    <EditText
-        android:id="@+id/HouseBranchEditText"
+    <Spinner
+        android:id="@+id/HouseBranchSpinner"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="house branch"
-        android:inputType="number"
+        android:layout_height="35dp"
         app:layout_constraintBottom_toTopOf="@+id/ModelCodeEditText"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toRightOf="@+id/HouseBranchtextView"/>
+
+    <TextView
+        android:id="@+id/HouseBranchtextView"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="House Branch"
+        android:gravity="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/ModelCodeEditText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/HouseBranchSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
 
     <EditText
         android:id="@+id/ModelCodeEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="model code"
+        android:hint="Model Code"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/MileAgeEditText"
-        app:layout_constraintTop_toBottomOf="@+id/HouseBranchEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/HouseBranchSpinner" />
 
     <EditText
         android:id="@+id/MileAgeEditText"

@@ -29,7 +29,7 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
         private EditText ModelNameEditText;
         private EditText EngineCapacityEditText;
         private Spinner SeatsSpinner;
-        private EditText ColorEditText;
+        private Spinner ColorSpinner;
         private EditText YearsManufactureEditText;
         private Spinner GearBoxSpinner;
 
@@ -50,9 +50,10 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             SeatsSpinner = (Spinner)findViewById( R.id.SeatsSpinner );
             SeatsSpinner.setAdapter(new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, new Integer[]{2,5,7, 10}));
 
+            ColorSpinner = (Spinner)findViewById( R.id.ColorSpinner );
+            ColorSpinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, new String[]{"black", "white", "silver", "grey", "blue", "yellow", "green", "red", "orange", "violet"}));
 
 
-            ColorEditText = (EditText)findViewById( R.id.ColorEditText );
             YearsManufactureEditText = (EditText)findViewById( R.id.YearsManufactureEditText );
             GearBoxSpinner = (Spinner)findViewById( R.id.GearBoxSpinner );
             GearBoxSpinner.setAdapter(new ArrayAdapter<Enums.GearBox>(this, android.R.layout.simple_spinner_item, Enums.GearBox.values()));
@@ -75,7 +76,7 @@ public class addCarModelActivity extends Activity implements View.OnClickListene
             contentValues.put(RentConst.CarModelConst.YEARMANUFACTURE, this.YearsManufactureEditText.getText().toString());
             contentValues.put(RentConst.CarModelConst.SEATS, Integer.valueOf(this.SeatsSpinner.getSelectedItem().toString()));
             contentValues.put(RentConst.CarModelConst.ENGINECAPACITY, Float.valueOf(this.EngineCapacityEditText.getText().toString()));
-            contentValues.put(RentConst.CarModelConst.COLOR, this.ColorEditText.getText().toString());
+            contentValues.put(RentConst.CarModelConst.COLOR, this.ColorSpinner.getSelectedItem().toString());
             contentValues.put(RentConst.CarModelConst.COMPANYNAME, this.CompanyNameEditText.getText().toString());
             contentValues.put(RentConst.CarModelConst.GEARBOX, this.GearBoxSpinner.getSelectedItem().toString());
             contentValues.put(RentConst.CarModelConst.MODELCODE, Integer.valueOf(this.ModelCodeEditText.getText().toString()));

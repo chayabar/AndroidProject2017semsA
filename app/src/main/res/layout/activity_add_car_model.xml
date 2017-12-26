@@ -7,7 +7,6 @@
     tools:context="com.example.owner.android5778_3965_2493_00.controller.addCarModelActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
-
     <Button
         android:id="@+id/AddButton"
         android:layout_width="0dp"
@@ -73,24 +72,31 @@
         android:id="@+id/SeatsSpinner"
         android:layout_width="0dp"
         android:layout_height="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/ColorEditText"
+        app:layout_constraintBottom_toTopOf="@+id/ColorSpinner"
         app:layout_constraintTop_toBottomOf="@+id/GearBoxSpinner"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/SeatstextView" />
+        app:layout_constraintLeft_toRightOf="@+id/SeatstextView"/>
 
-
-    <EditText
-        android:id="@+id/ColorEditText"
+    <Spinner
+        android:id="@+id/ColorSpinner"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="color"
-        android:inputType="textPersonName"
+        android:layout_height="35dp"
         app:layout_constraintBottom_toTopOf="@+id/YearsManufactureEditText"
         app:layout_constraintTop_toBottomOf="@+id/SeatsSpinner"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toRightOf="@+id/ColortextView"/>
 
+    <TextView
+        android:id="@+id/ColortextView"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Color"
+        android:gravity="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/YearsManufactureEditText"
+        app:layout_constraintTop_toBottomOf="@+id/SeatsSpinner"
+        app:layout_constraintRight_toLeftOf="@+id/ColorSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <EditText
         android:id="@+id/YearsManufactureEditText"
@@ -100,7 +106,7 @@
         android:hint="year manufacture"
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/AddButton"
-        app:layout_constraintTop_toBottomOf="@+id/ColorEditText"
+        app:layout_constraintTop_toBottomOf="@+id/ColorSpinner"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -112,32 +118,31 @@
         app:layout_constraintBottom_toTopOf="@+id/SeatsSpinner"
         app:layout_constraintTop_toBottomOf="@+id/EngineCapacityEditText"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/gearBoxtextView" />
+        app:layout_constraintLeft_toRightOf="@+id/gearBoxtextView"/>
 
     <TextView
         android:id="@+id/gearBoxtextView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:text="Gear Box"
-        app:layout_constraintBottom_toTopOf="@+id/SeatsSpinner"
+        android:gravity="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/SeatstextView"
         app:layout_constraintTop_toBottomOf="@+id/EngineCapacityEditText"
-
-        app:layout_constraintRight_toRightOf="@+id/GearBoxSpinner"
-
-        app:layout_constraintLeft_toLeftOf="parent" />
-
+        app:layout_constraintRight_toLeftOf="@+id/GearBoxSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <TextView
         android:id="@+id/SeatstextView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:text="Seats"
-        app:layout_constraintBottom_toTopOf="@+id/ColorEditText"
-        app:layout_constraintTop_toBottomOf="@+id/GearBoxSpinner"
-
-        app:layout_constraintRight_toRightOf="@+id/SeatsSpinner"
-
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:gravity="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/ColorSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/SeatsSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/GearBoxSpinner" />
 
 
 </android.support.constraint.ConstraintLayout>

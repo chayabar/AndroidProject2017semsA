@@ -1,6 +1,7 @@
 package com.example.owner.android5778_3965_2493_00.controller;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +21,7 @@ import java.util.List;
 
 
 
-public class CarListActivity extends Activity {
+public class CarListActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

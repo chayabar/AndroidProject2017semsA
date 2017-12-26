@@ -5,8 +5,10 @@ import android.content.ContentValues;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.owner.android5778_3965_2493_00.R;
@@ -16,7 +18,7 @@ import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
 public class addCarActivity extends Activity implements View.OnClickListener {
 
     private Button AddButton;
-    private EditText HouseBranchEditText;
+    private Spinner HouseBranchSpinner;
     private EditText ModelCodeEditText;
     private EditText MileAgeEditText;
     private EditText CarNumberEditText;
@@ -30,7 +32,11 @@ public class addCarActivity extends Activity implements View.OnClickListener {
 
     private void findViews() {
         AddButton = (Button)findViewById( R.id.AddButton );
-        HouseBranchEditText = (EditText)findViewById( R.id.HouseBranchEditText );
+
+        HouseBranchSpinner = (Spinner)findViewById( R.id.HouseBranchSpinner );
+        HouseBranchSpinner.setAdapter(new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, new Integer[]{2,5,7, 10}));
+
+
         ModelCodeEditText = (EditText)findViewById( R.id.ModelCodeEditText );
         MileAgeEditText = (EditText)findViewById( R.id.MileAgeEditText );
         CarNumberEditText = (EditText)findViewById( R.id.CarNumberEditText );
@@ -57,7 +63,7 @@ public class addCarActivity extends Activity implements View.OnClickListener {
         final ContentValues contentValues = new ContentValues();
         try {
             contentValues.put(RentConst.CarConst.CARNUMBER, Integer.valueOf(this.CarNumberEditText.getText().toString()));
-            contentValues.put(RentConst.CarConst.HOUSEBRANCH, Integer.valueOf(this.HouseBranchEditText.getText().toString()));
+            contentValues.put(RentConst.CarConst.HOUSEBRANCH, Integer.valueOf(this.HouseBranchSpinner.getSelectedItem().toString()));
             contentValues.put(RentConst.CarConst.MILEAGE, Float.valueOf(this.MileAgeEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.MODELCODE, this.ModelCodeEditText.getText().toString());
             new AsyncTask<Void, Void, Boolean>() {
