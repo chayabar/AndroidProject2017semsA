@@ -36,12 +36,12 @@ public class CarListActivity extends Activity {
                     convertView = View.inflate(CarListActivity.this ,R.layout.car_row, null);
                 }
                 TextView productionCarNumberTextView = (TextView) convertView.findViewById(R.id.carNumber);
-                TextView productModelNameTextView = (TextView) convertView.findViewById(R.id.modelName);
+                TextView productModelCodeTextView = (TextView) convertView.findViewById(R.id.modelCode);
                 TextView productHouseBranchTextView = (TextView) convertView.findViewById(R.id.houseBranch);
                 TextView productionMileAgeTextView = (TextView) convertView.findViewById(R.id.mileAge);
 
                 productionCarNumberTextView.setText(myList.get(position).getCarNumber());
-                productModelNameTextView.setText((myList.get(position).getModelName()));
+                productModelCodeTextView.setText(((Integer)myList.get(position).getModelCode()).toString());
                 productHouseBranchTextView.setText(((Integer) myList.get(position).getHouseBranch()).toString());
                 productionMileAgeTextView.setText(((Float) myList.get(position).getMileAge()).toString());
                 return convertView;
