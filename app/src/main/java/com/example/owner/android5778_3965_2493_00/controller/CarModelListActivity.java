@@ -1,10 +1,13 @@
 package com.example.owner.android5778_3965_2493_00.controller;
 
 import android.app.Activity;
+import android.app.ListActivity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,7 +20,28 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class CarModelListActivity extends Activity {
+
+public class CarModelListActivity extends ListActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        new AsyncTask<Void, Void, ListAdapter>() {
+            @Override
+            protected ListAdapter doInBackground(Void... params) {
+                List<CarModel> carModelList = DBManagerFactory.getManager().getCarModels();
+                return new ArrayAdapter<CarModel>(getBaseContext(), R.layout.car_model_row, carModelList);
+            }
+
+            @Override
+            protected void onPostExecute(ListAdapter adapter) {
+                setListAdapter(adapter);
+            }
+        }.execute();
+
+    }
+
+/*public class CarModelListActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,5 +92,5 @@ public class CarModelListActivity extends Activity {
         listView.setAdapter(adapter);
 
         this.setContentView(listView);
-    }
+    }*/
 }

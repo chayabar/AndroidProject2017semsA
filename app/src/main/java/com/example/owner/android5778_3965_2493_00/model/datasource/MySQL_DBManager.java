@@ -177,7 +177,7 @@ public class MySQL_DBManager implements DB_manager {
                 JSONObject jsonObject = array.getJSONObject(i);
                 ContentValues contentValues = PHPtools.JsonToContentValues(jsonObject);
                 Car car = RentConst.ContentValuesToCar(contentValues);
-                result.add(car );
+                result.add(car);
             }
             return result;
         }

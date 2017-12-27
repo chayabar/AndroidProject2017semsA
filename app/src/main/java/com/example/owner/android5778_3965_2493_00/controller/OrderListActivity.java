@@ -1,6 +1,7 @@
 package com.example.owner.android5778_3965_2493_00.controller;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,7 @@ import com.example.owner.android5778_3965_2493_00.model.entities.Order;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class OrderListActivity extends Activity {
+public class OrderListActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +92,7 @@ public class OrderListActivity extends Activity {
             @Override
             protected void onPostExecute (ListAdapter adapter)
             {
-                //setListAdapter(adapter);
+                setListAdapter(adapter);
             }
 
         }.execute();

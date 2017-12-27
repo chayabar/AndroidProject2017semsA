@@ -11,15 +11,18 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import android.content.ClipData;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
+import com.example.owner.android5778_3965_2493_00.model.datasource.List_DBManager;
 
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
 import com.example.owner.android5778_3965_2493_00.model.entities.Car;
 
 import java.util.List;
-
-
 
 public class CarListActivity extends ListActivity {
 
@@ -38,10 +41,18 @@ public class CarListActivity extends ListActivity {
                 setListAdapter(adapter);
             }
         }.execute();
-       /* setContentView(R.layout.activity_car_list);
-        initItemByListView();*/
+
     }
 /*
+public class CarListActivity extends ListActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);*/
+       /* setContentView(R.layout.activity_car_list);
+        initItemByListView();
+    }
+
     void initItemByListView() {
         final List<Car> myList = DBManagerFactory.getManager().getCars();
         ListView listView = new ListView(this);
