@@ -48,7 +48,7 @@ public class OrderListActivity extends ListActivity {
             @Override
             protected ListAdapter doInBackground(Void... params) {
                 final List<Order> myList = DBManagerFactory.getManager().getOrders();
-                return new ArrayAdapter<Order>(getBaseContext(), R.layout.order_row, myList);
+                return new ArrayAdapter<Order>(getBaseContext(), R.layout.item_row, myList);
                 /*ListView listView = new ListView(this);
                 //array adaptor is for Order (the class) in the example "item" is for item class they have...
                 ArrayAdapter<Order> adapter = new ArrayAdapter<Order>(this, R.layout.order_row, myList) {

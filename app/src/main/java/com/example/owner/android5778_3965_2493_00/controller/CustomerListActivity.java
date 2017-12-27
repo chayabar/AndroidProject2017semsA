@@ -87,7 +87,7 @@ public class CustomerListActivity extends ListActivity {
             @Override
             protected ListAdapter doInBackground(Void... params) {
                 List<Customer> customerList = DBManagerFactory.getManager().getCustomers();
-                return new ArrayAdapter<Customer>(getBaseContext(), R.layout.customer_row, customerList);
+                return new ArrayAdapter<Customer>(getBaseContext(), R.layout.item_row, customerList);
             }
 
             @Override

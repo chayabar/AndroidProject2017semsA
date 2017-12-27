@@ -30,7 +30,7 @@ public class BranchListActivity extends ListActivity {
             @Override
             protected ListAdapter doInBackground(Void... params) {
                 List<Branch> branchList = DBManagerFactory.getManager().getBranchs();
-                return new ArrayAdapter<Branch>(getBaseContext(), R.layout.branch_row, branchList);
+                return new ArrayAdapter<Branch>(getBaseContext(), R.layout.item_row, branchList);
             }
 
             @Override

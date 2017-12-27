@@ -33,7 +33,7 @@ public class CarListActivity extends ListActivity {
             @Override
             protected ListAdapter doInBackground(Void... params) {
                 List<Car> carList = DBManagerFactory.getManager().getCars();
-                return new ArrayAdapter<Car>(getBaseContext(), R.layout.car_row, carList);
+                return new ArrayAdapter<Car>(getBaseContext(), R.layout.item_row, carList);
             }
 
             @Override
