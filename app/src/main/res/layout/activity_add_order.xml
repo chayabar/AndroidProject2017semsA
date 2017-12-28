@@ -39,37 +39,37 @@
             app:layout_constraintBottom_toTopOf="@+id/CarNumberSpinner"
             app:layout_constraintTop_toBottomOf="@+id/CustomerIdEditText"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toRightOf="OrderStatustextView" />
+            app:layout_constraintLeft_toRightOf="@+id/OrderStatustextView" />
 
         <TextView
             android:id="@+id/OrderStatustextView"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:gravity="center"
-            android:text="Order Status"
+            android:text=" Order Status "
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
             app:layout_constraintBottom_toTopOf="@+id/CarNumberSpinner"
             app:layout_constraintTop_toBottomOf="@+id/CustomerIdEditText"
-            app:layout_constraintRight_toLeftOf="OrderStatusSpinner"
+            app:layout_constraintRight_toLeftOf="@+id/OrderStatusSpinner"
             app:layout_constraintLeft_toLeftOf="parent" />
 
         <Spinner
             android:id="@+id/CarNumberSpinner"
             android:layout_width="0dp"
             android:layout_height="35dp"
-            app:layout_constraintBottom_toTopOf="@+id/StartMileAgeEditText"
+            app:layout_constraintBottom_toTopOf="@+id/startRentTextView"
             app:layout_constraintTop_toBottomOf="@+id/OrderStatusSpinner"
             app:layout_constraintLeft_toRightOf="@+id/CarNumbertextView"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            app:layout_constraintRight_toRightOf="parent" />
 
         <TextView
             android:id="@+id/CarNumbertextView"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:gravity="center"
-            android:text="Car Number"
+            android:text=" Car Number "
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
-            app:layout_constraintBottom_toTopOf="@+id/StartMileAgeEditText"
+            app:layout_constraintBottom_toTopOf="@+id/startRentTextView"
             app:layout_constraintTop_toBottomOf="@+id/OrderStatusSpinner"
             app:layout_constraintRight_toLeftOf="@id/CarNumberSpinner"
             app:layout_constraintLeft_toLeftOf="parent" />
@@ -79,11 +79,11 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:gravity="center"
-            android:text="start rent:"
+            android:text=" Start rent: "
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
             app:layout_constraintBottom_toTopOf="@+id/endRentTextView"
             app:layout_constraintTop_toBottomOf="@+id/CarNumberSpinner"
-            app:layout_constraintRight_toLeftOf="CustomDatePiker"
+            app:layout_constraintRight_toLeftOf="@+id/CustomDatePiker"
             app:layout_constraintLeft_toLeftOf="parent" />
 
         <view
@@ -91,23 +91,25 @@
             class="com.example.owner.android5778_3965_2493_00.controller.CustomDatePicker"
             id="@+id/view"
             layout_width="match_parent"
+            android:gravity="left|center"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
             android:layout_width="0dp"
             android:layout_height="35dp"
             app:layout_constraintBottom_toTopOf="@+id/CustomDatePiker2"
             app:layout_constraintTop_toBottomOf="@+id/CarNumberSpinner"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toRightOf="startRentTextView" />
+            app:layout_constraintLeft_toRightOf="@+id/startRentTextView" />
 
         <TextView
             android:id="@+id/endRentTextView"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:gravity="center"
-            android:text="End rent:"
+            android:text=" End rent: "
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
             app:layout_constraintBottom_toTopOf="@+id/StartMileAgeEditText"
             app:layout_constraintTop_toBottomOf="@+id/CustomDatePiker"
-            app:layout_constraintRight_toLeftOf="CustomDatePiker2"
+            app:layout_constraintRight_toLeftOf="@+id/CustomDatePiker2"
             app:layout_constraintLeft_toLeftOf="parent" />
 
         <view
@@ -115,12 +117,14 @@
             class="com.example.owner.android5778_3965_2493_00.controller.CustomDatePicker"
             id="@+id/view4"
             layout_width="match_parent"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:gravity="left|center"
             android:layout_width="0dp"
             android:layout_height="35dp"
             app:layout_constraintBottom_toTopOf="@+id/StartMileAgeEditText"
             app:layout_constraintTop_toBottomOf="@+id/CustomDatePiker"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toRightOf="endRentTextView" />
+            app:layout_constraintLeft_toRightOf="@+id/endRentTextView" />
 
         <EditText
             android:id="@+id/StartMileAgeEditText"
@@ -149,11 +153,12 @@
         <CheckBox
             android:id="@+id/FuelFillingCheckBox"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fuel Filling"
+            android:layout_height="35dp"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:text="Fuel Filling "
             app:layout_constraintBottom_toTopOf="@+id/ChargeEditText"
             app:layout_constraintTop_toBottomOf="@+id/EndMileAgeEditText"
-            app:layout_constraintRight_toLeftOf="FuelLitterEditText"
+            app:layout_constraintRight_toLeftOf="@+id/FuelLitterEditText"
             app:layout_constraintLeft_toLeftOf="parent" />
 
         <EditText
@@ -166,7 +171,7 @@
             app:layout_constraintBottom_toTopOf="@+id/ChargeEditText"
             app:layout_constraintTop_toBottomOf="@+id/EndMileAgeEditText"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toRightOf="FuelFillingCheckBox" />
+            app:layout_constraintLeft_toRightOf="@+id/FuelFillingCheckBox" />
 
         <EditText
             android:id="@+id/ChargeEditText"
