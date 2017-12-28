@@ -22,7 +22,7 @@
         android:id="@+id/HouseBranchSpinner"
         android:layout_width="0dp"
         android:layout_height="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/ModelCodeEditText"
+        app:layout_constraintBottom_toTopOf="@+id/ModelCodeSpinner"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/HouseBranchtextView"/>
@@ -34,23 +34,32 @@
         android:text="House Branch"
         android:gravity="center"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        app:layout_constraintBottom_toTopOf="@+id/ModelCodeEditText"
+        app:layout_constraintBottom_toTopOf="@+id/ModelCodeSpinner"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/HouseBranchSpinner"
         app:layout_constraintLeft_toLeftOf="parent"/>
 
-
-    <EditText
-        android:id="@+id/ModelCodeEditText"
+    <Spinner
+        android:id="@+id/ModelCodeSpinner"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Model Code"
-        android:inputType="number"
+        android:layout_height="35dp"
         app:layout_constraintBottom_toTopOf="@+id/MileAgeEditText"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HouseBranchSpinner"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HouseBranchSpinner" />
+        app:layout_constraintLeft_toRightOf="@+id/ModelCodetextView"/>
+
+    <TextView
+        android:id="@+id/ModelCodetextView"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Model Code"
+        android:gravity="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/MileAgeEditText"
+        app:layout_constraintTop_toBottomOf="@+id/HouseBranchSpinner"
+        app:layout_constraintRight_toLeftOf="@+id/ModelCodeSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
 
     <EditText
         android:id="@+id/MileAgeEditText"
@@ -60,7 +69,7 @@
         android:hint="mile age"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/CarNumberEditText"
-        app:layout_constraintTop_toBottomOf="@+id/ModelCodeEditText"
+        app:layout_constraintTop_toBottomOf="@+id/ModelCodeSpinner"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -70,9 +79,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="car number"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/AddButton"
-        app:layout_constraintTop_toBottomOf="@+id/MileAgeEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/MileAgeEditText" />
 </android.support.constraint.ConstraintLayout>

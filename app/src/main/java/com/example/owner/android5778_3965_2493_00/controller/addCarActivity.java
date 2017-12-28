@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -22,16 +23,19 @@ import android.widget.Toast;
 import com.example.owner.android5778_3965_2493_00.R;
 import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
 import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
+import com.example.owner.android5778_3965_2493_00.model.entities.Branch;
+import com.example.owner.android5778_3965_2493_00.model.entities.CarModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class addCarActivity extends Activity implements View.OnClickListener {
 
     private Button AddButton;
     private Spinner HouseBranchSpinner;
-    private EditText ModelCodeEditText;
+    private Spinner ModelCodeSpinner;
     private EditText MileAgeEditText;
     private EditText CarNumberEditText;
-    private TextView loadingTextView;
-    private ListView ItemListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,47 +45,46 @@ public class addCarActivity extends Activity implements View.OnClickListener {
     }
 
     private void findViews() {
-        AddButton = (Button)findViewById( R.id.AddButton );
+        AddButton = (Button) findViewById(R.id.AddButton);
+        HouseBranchSpinner = (Spinner) findViewById(R.id.HouseBranchSpinner);
+        ModelCodeSpinner = (Spinner) findViewById(R.id.ModelCodeSpinner);
+        MileAgeEditText = (EditText) findViewById(R.id.MileAgeEditText);
+        CarNumberEditText = (EditText) findViewById(R.id.CarNumberEditText);
+        AddButton.setOnClickListener(this);
 
-        HouseBranchSpinner = (Spinner)findViewById( R.id.HouseBranchSpinner );
-        HouseBranchSpinner.setAdapter(new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, new Integer[]{2,5,7, 10}));
-
-
-        ModelCodeEditText = (EditText)findViewById( R.id.ModelCodeEditText );
-        MileAgeEditText = (EditText)findViewById( R.id.MileAgeEditText );
-        CarNumberEditText = (EditText)findViewById( R.id.CarNumberEditText );
-        loadingTextView = (TextView) findViewById(R.id.loadingTextView);
-        ItemListView = (ListView) findViewById(R.id.ItemListView);
-
-        AddButton.setOnClickListener( this );
-
-        new AsyncTask<Void, Void, Cursor>() {
+        new AsyncTask<Void, Void, ArrayAdapter>() {
             @Override
-            protected Cursor doInBackground(Void... params) {
-                return getContentResolver().query(Uri.parse("https://vlab.jct.ac.il:8443/domains/databases/phpMyAdmin/sql.php?server=1&db=RentCars&table=Branch_table&pos=0&token=68cc166969610a2b04161a890848ee36"), null, null, null, null);
+            protected ArrayAdapter doInBackground(Void... params) {
+                List<Integer> branchList = new ArrayList<Integer>();
+                for (Branch b : DBManagerFactory.getManager().getBranchs()) {
+                    branchList.add(b.getBranchNumber());
+                }
+                return new ArrayAdapter<Integer>(addCarActivity.this, android.R.layout.simple_spinner_item, branchList);
             }
 
             @Override
-            protected void onPostExecute(Cursor cursor) {
-                super.onPostExecute(cursor);
-                CursorAdapter adapter = new CursorAdapter(addCarActivity.this, cursor) {
-                    @Override
-                    public View newView(Context context, Cursor cursor, ViewGroup parent) {
-                        TextView tv = new TextView(context);
-                        tv.setTextSize(15);
-                        tv.setTextColor(Color.BLUE);
-                        return tv;
-                    }
-
-                    @Override
-                    public void bindView(View view, Context context, Cursor cursor) {
-                        TextView tv = (TextView) view;
-                        tv.setText("[" + cursor.getString(0) + "]  " + cursor.getString(1));
-                    }
-                };
-
+            protected void onPostExecute(ArrayAdapter adapter) {
                 HouseBranchSpinner.setAdapter(adapter);
                 HouseBranchSpinner.setEnabled(true);
+
+            }
+        }.execute();
+
+        new AsyncTask<Void, Void, ArrayAdapter>() {
+            @Override
+            protected ArrayAdapter doInBackground(Void... params) {
+                List<Integer> modelCodeList = new ArrayList<Integer>();
+                for (CarModel cm : DBManagerFactory.getManager().getCarModels()) {
+                    modelCodeList.add(cm.getModelCode());
+                }
+                return new ArrayAdapter<Integer>(addCarActivity.this, android.R.layout.simple_spinner_item, modelCodeList);
+            }
+
+            @Override
+            protected void onPostExecute(ArrayAdapter adapter) {
+                ModelCodeSpinner.setAdapter(adapter);
+                ModelCodeSpinner.setEnabled(true);
+
             }
         }.execute();
     }
@@ -107,7 +110,7 @@ public class addCarActivity extends Activity implements View.OnClickListener {
             contentValues.put(RentConst.CarConst.CARNUMBER, Integer.valueOf(this.CarNumberEditText.getText().toString()));
             contentValues.put(RentConst.CarConst.HOUSEBRANCH, Integer.valueOf(this.HouseBranchSpinner.getSelectedItem().toString()));
             contentValues.put(RentConst.CarConst.MILEAGE, Float.valueOf(this.MileAgeEditText.getText().toString()));
-            contentValues.put(RentConst.CarConst.MODELCODE, this.ModelCodeEditText.getText().toString());
+            contentValues.put(RentConst.CarConst.MODELCODE, this.ModelCodeSpinner.getSelectedItem().toString());
             new AsyncTask<Void, Void, Boolean>() {
                 @Override
                 protected void onPostExecute(Boolean idResult) {
