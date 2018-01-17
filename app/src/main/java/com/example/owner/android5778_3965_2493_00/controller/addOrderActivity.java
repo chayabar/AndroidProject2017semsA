@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -114,7 +113,9 @@ public class addOrderActivity extends Activity implements View.OnClickListener {
             contentValues.put(RentConst.OrderConst.STARTMILEAGE, startMileAge);
             float endMileAge = Float.valueOf(this.EndMileAgeEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.ENDMILEAGE, endMileAge);
-            contentValues.put(RentConst.OrderConst.FUELFILLING, this.FuelFillingCheckBox.getText().toString());
+            StringBuffer result = new StringBuffer();
+            result.append(FuelFillingCheckBox.isChecked());
+            contentValues.put(RentConst.OrderConst.FUELFILLING, Boolean.valueOf(result.toString()));
             contentValues.put(RentConst.OrderConst.ORDERSTATUS, this.OrderStatusSpinner.getSelectedItem().toString());
             float fullLitter = Float.valueOf(this.FuelLitterEditText.getText().toString());
             contentValues.put(RentConst.OrderConst.FUELLITTER, fullLitter);

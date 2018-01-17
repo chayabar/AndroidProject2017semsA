@@ -1,20 +1,12 @@
 package com.example.owner.android5778_3965_2493_00.controller;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.owner.android5778_3965_2493_00.R;
-import com.example.owner.android5778_3965_2493_00.model.backend.DBManagerFactory;
-import com.example.owner.android5778_3965_2493_00.model.backend.RentConst;
-import com.example.owner.android5778_3965_2493_00.model.entities.Customer;
-import com.example.owner.android5778_3965_2493_00.model.entities.Order;
-
-import java.util.List;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
